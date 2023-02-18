@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Eum.gRPC.Server.Mail.props" />
+</Project>

@@ -1,0 +1,22 @@
+
+syntax = "proto3";
+
+option csharp_namespace = "Eum.gRPC.Server.Proto.Mail";
+
+package Mail;
+
+// The greeting service definition.
+service Mail {
+  // Sends a greeting
+  rpc GetMailList (MailRequest) returns (MailReplay);
+}
+
+// The request message containing the user's name.
+message MailRequest {
+	uint32 mailId = 1; 
+}
+
+// The response message containing the greetings.
+message MailReplay {
+  string message = 1;
+}

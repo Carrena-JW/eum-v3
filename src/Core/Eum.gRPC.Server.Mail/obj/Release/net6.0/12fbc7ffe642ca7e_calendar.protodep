@@ -1,0 +1,2 @@
+obj\Release\net6.0\Protos/Calendar.cs \
+obj\Release\net6.0\Protos/CalendarGrpc.cs: Protos/calendar.proto

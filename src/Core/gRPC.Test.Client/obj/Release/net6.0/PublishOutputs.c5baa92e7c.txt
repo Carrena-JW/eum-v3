@@ -1,0 +1,10 @@
+D:\04.Publish\EumV3\test_client\gRPC.Test.Client.exe
+D:\04.Publish\EumV3\test_client\gRPC.Test.Client.dll
+D:\04.Publish\EumV3\test_client\gRPC.Test.Client.runtimeconfig.json
+D:\04.Publish\EumV3\test_client\gRPC.Test.Client.pdb
+D:\04.Publish\EumV3\test_client\Google.Protobuf.dll
+D:\04.Publish\EumV3\test_client\Grpc.Core.Api.dll
+D:\04.Publish\EumV3\test_client\Grpc.Net.Client.dll
+D:\04.Publish\EumV3\test_client\Grpc.Net.Common.dll
+D:\04.Publish\EumV3\test_client\Microsoft.Extensions.Logging.Abstractions.dll
+D:\04.Publish\EumV3\test_client\gRPC.Test.Client.deps.json

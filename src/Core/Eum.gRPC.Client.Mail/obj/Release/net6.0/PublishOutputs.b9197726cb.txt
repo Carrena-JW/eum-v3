@@ -1,0 +1,3 @@
+D:\04.Publish\EumV3\New folder\Eum.gRPC.Client.Mail.dll
+D:\04.Publish\EumV3\New folder\Eum.gRPC.Client.Mail.deps.json
+D:\04.Publish\EumV3\New folder\Eum.gRPC.Client.Mail.pdb

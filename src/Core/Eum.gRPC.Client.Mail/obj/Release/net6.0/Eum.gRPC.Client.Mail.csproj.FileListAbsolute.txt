@@ -1,0 +1,17 @@
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\bin\Release\net6.0\Eum.gRPC.Client.Mail.deps.json
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\bin\Release\net6.0\Eum.gRPC.Client.Mail.dll
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\bin\Release\net6.0\Eum.gRPC.Client.Mail.pdb
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.csproj.AssemblyReference.cache
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.GeneratedMSBuildEditorConfig.editorconfig
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.AssemblyInfoInputs.cache
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.AssemblyInfo.cs
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.csproj.CoreCompileInputs.cache
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.dll
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\refint\Eum.gRPC.Client.Mail.dll
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.pdb
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\ref\Eum.gRPC.Client.Mail.dll
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\bin\Release\net6.0\Eum.Core.Infrastructure.dll
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\bin\Release\net6.0\Eum.Core.Model.dll
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\bin\Release\net6.0\Eum.Core.Infrastructure.pdb
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\bin\Release\net6.0\Eum.Core.Model.pdb
+D:\01.Repository\EumV3\src\Core\Eum.gRPC.Client.Mail\obj\Release\net6.0\Eum.gRPC.Client.Mail.csproj.CopyComplete
