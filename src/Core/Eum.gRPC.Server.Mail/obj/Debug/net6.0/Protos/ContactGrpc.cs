@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Eum.gRPC.Server.Proto.Contact {
+namespace Eum.gRPC.Server.Mail {
   /// <summary>
   /// The greeting service definition.
   /// </summary>
@@ -49,12 +49,12 @@ namespace Eum.gRPC.Server.Proto.Contact {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Proto.Contact.ContactRequest> __Marshaller_Contact_ContactRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Proto.Contact.ContactRequest.Parser));
+    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Mail.ContactRequest> __Marshaller_Contact_ContactRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Mail.ContactRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Proto.Contact.ContactReplay> __Marshaller_Contact_ContactReplay = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Proto.Contact.ContactReplay.Parser));
+    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Mail.ContactReplay> __Marshaller_Contact_ContactReplay = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Mail.ContactReplay.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Eum.gRPC.Server.Proto.Contact.ContactRequest, global::Eum.gRPC.Server.Proto.Contact.ContactReplay> __Method_GetContactList = new grpc::Method<global::Eum.gRPC.Server.Proto.Contact.ContactRequest, global::Eum.gRPC.Server.Proto.Contact.ContactReplay>(
+    static readonly grpc::Method<global::Eum.gRPC.Server.Mail.ContactRequest, global::Eum.gRPC.Server.Mail.ContactReplay> __Method_GetContactList = new grpc::Method<global::Eum.gRPC.Server.Mail.ContactRequest, global::Eum.gRPC.Server.Mail.ContactReplay>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetContactList",
@@ -64,7 +64,7 @@ namespace Eum.gRPC.Server.Proto.Contact {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Eum.gRPC.Server.Proto.Contact.ContactReflection.Descriptor.Services[0]; }
+      get { return global::Eum.gRPC.Server.Mail.ContactReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Contact</summary>
@@ -78,11 +78,94 @@ namespace Eum.gRPC.Server.Proto.Contact {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Eum.gRPC.Server.Proto.Contact.ContactReplay> GetContactList(global::Eum.gRPC.Server.Proto.Contact.ContactRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Eum.gRPC.Server.Mail.ContactReplay> GetContactList(global::Eum.gRPC.Server.Mail.ContactRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+    }
+
+    /// <summary>Client for Contact</summary>
+    public partial class ContactClient : grpc::ClientBase<ContactClient>
+    {
+      /// <summary>Creates a new client for Contact</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public ContactClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for Contact that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public ContactClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected ContactClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected ContactClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Eum.gRPC.Server.Mail.ContactReplay GetContactList(global::Eum.gRPC.Server.Mail.ContactRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetContactList(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Eum.gRPC.Server.Mail.ContactReplay GetContactList(global::Eum.gRPC.Server.Mail.ContactRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetContactList, null, options, request);
+      }
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Eum.gRPC.Server.Mail.ContactReplay> GetContactListAsync(global::Eum.gRPC.Server.Mail.ContactRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetContactListAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Eum.gRPC.Server.Mail.ContactReplay> GetContactListAsync(global::Eum.gRPC.Server.Mail.ContactRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetContactList, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override ContactClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new ContactClient(configuration);
+      }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -101,7 +184,7 @@ namespace Eum.gRPC.Server.Proto.Contact {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, ContactBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetContactList, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Eum.gRPC.Server.Proto.Contact.ContactRequest, global::Eum.gRPC.Server.Proto.Contact.ContactReplay>(serviceImpl.GetContactList));
+      serviceBinder.AddMethod(__Method_GetContactList, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Eum.gRPC.Server.Mail.ContactRequest, global::Eum.gRPC.Server.Mail.ContactReplay>(serviceImpl.GetContactList));
     }
 
   }

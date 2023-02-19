@@ -7,7 +7,7 @@
 
 using grpc = global::Grpc.Core;
 
-namespace Eum.gRPC.Server.Proto.Mail {
+namespace Eum.gRPC.Server.Mail {
   /// <summary>
   /// The greeting service definition.
   /// </summary>
@@ -49,12 +49,12 @@ namespace Eum.gRPC.Server.Proto.Mail {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Proto.Mail.MailRequest> __Marshaller_Mail_MailRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Proto.Mail.MailRequest.Parser));
+    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Mail.MailRequest> __Marshaller_Mail_MailRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Mail.MailRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Proto.Mail.MailReplay> __Marshaller_Mail_MailReplay = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Proto.Mail.MailReplay.Parser));
+    static readonly grpc::Marshaller<global::Eum.gRPC.Server.Mail.MailReplay> __Marshaller_Mail_MailReplay = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::Eum.gRPC.Server.Mail.MailReplay.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::Eum.gRPC.Server.Proto.Mail.MailRequest, global::Eum.gRPC.Server.Proto.Mail.MailReplay> __Method_GetMailList = new grpc::Method<global::Eum.gRPC.Server.Proto.Mail.MailRequest, global::Eum.gRPC.Server.Proto.Mail.MailReplay>(
+    static readonly grpc::Method<global::Eum.gRPC.Server.Mail.MailRequest, global::Eum.gRPC.Server.Mail.MailReplay> __Method_GetMailList = new grpc::Method<global::Eum.gRPC.Server.Mail.MailRequest, global::Eum.gRPC.Server.Mail.MailReplay>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetMailList",
@@ -64,7 +64,7 @@ namespace Eum.gRPC.Server.Proto.Mail {
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
     {
-      get { return global::Eum.gRPC.Server.Proto.Mail.MailReflection.Descriptor.Services[0]; }
+      get { return global::Eum.gRPC.Server.Mail.MailReflection.Descriptor.Services[0]; }
     }
 
     /// <summary>Base class for server-side implementations of Mail</summary>
@@ -78,11 +78,94 @@ namespace Eum.gRPC.Server.Proto.Mail {
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::Eum.gRPC.Server.Proto.Mail.MailReplay> GetMailList(global::Eum.gRPC.Server.Proto.Mail.MailRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::Eum.gRPC.Server.Mail.MailReplay> GetMailList(global::Eum.gRPC.Server.Mail.MailRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
 
+    }
+
+    /// <summary>Client for Mail</summary>
+    public partial class MailClient : grpc::ClientBase<MailClient>
+    {
+      /// <summary>Creates a new client for Mail</summary>
+      /// <param name="channel">The channel to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public MailClient(grpc::ChannelBase channel) : base(channel)
+      {
+      }
+      /// <summary>Creates a new client for Mail that uses a custom <c>CallInvoker</c>.</summary>
+      /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public MailClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      {
+      }
+      /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected MailClient() : base()
+      {
+      }
+      /// <summary>Protected constructor to allow creation of configured clients.</summary>
+      /// <param name="configuration">The client configuration.</param>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected MailClient(ClientBaseConfiguration configuration) : base(configuration)
+      {
+      }
+
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Eum.gRPC.Server.Mail.MailReplay GetMailList(global::Eum.gRPC.Server.Mail.MailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetMailList(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The response received from the server.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::Eum.gRPC.Server.Mail.MailReplay GetMailList(global::Eum.gRPC.Server.Mail.MailRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetMailList, null, options, request);
+      }
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+      /// <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+      /// <param name="cancellationToken">An optional token for canceling the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Eum.gRPC.Server.Mail.MailReplay> GetMailListAsync(global::Eum.gRPC.Server.Mail.MailRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetMailListAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      /// <summary>
+      /// Sends a greeting
+      /// </summary>
+      /// <param name="request">The request to send to the server.</param>
+      /// <param name="options">The options for the call.</param>
+      /// <returns>The call object.</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::Eum.gRPC.Server.Mail.MailReplay> GetMailListAsync(global::Eum.gRPC.Server.Mail.MailRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetMailList, null, options, request);
+      }
+      /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      protected override MailClient NewInstance(ClientBaseConfiguration configuration)
+      {
+        return new MailClient(configuration);
+      }
     }
 
     /// <summary>Creates service definition that can be registered with a server</summary>
@@ -101,7 +184,7 @@ namespace Eum.gRPC.Server.Proto.Mail {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, MailBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetMailList, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Eum.gRPC.Server.Proto.Mail.MailRequest, global::Eum.gRPC.Server.Proto.Mail.MailReplay>(serviceImpl.GetMailList));
+      serviceBinder.AddMethod(__Method_GetMailList, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::Eum.gRPC.Server.Mail.MailRequest, global::Eum.gRPC.Server.Mail.MailReplay>(serviceImpl.GetMailList));
     }
 
   }

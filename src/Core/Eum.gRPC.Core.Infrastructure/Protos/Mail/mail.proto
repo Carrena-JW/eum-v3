@@ -1,22 +1,22 @@
 
 syntax = "proto3";
 
-option csharp_namespace = "Eum.gRPC.Server.Proto.Calendar";
+option csharp_namespace = "Eum.gRPC.Server.Mail";
 
-package Calendar;
+package Mail;
 
 // The greeting service definition.
-service Calendar {
+service Mail {
   // Sends a greeting
-  rpc GetCalendarList (CalendarRequest) returns (CalendarReplay);
+  rpc GetMailList (MailRequest) returns (MailReplay);
 }
 
 // The request message containing the user's name.
-message CalendarRequest {
+message MailRequest {
 	uint32 mailId = 1; 
 }
 
 // The response message containing the greetings.
-message CalendarReplay {
+message MailReplay {
   string message = 1;
 }

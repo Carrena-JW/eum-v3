@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Eum.gRPC.Server.Proto.Contact {
+namespace Eum.gRPC.Server.Mail {
 
   /// <summary>Holder for reflection information generated from Protos/contact.proto</summary>
   public static partial class ContactReflection {
@@ -27,13 +27,13 @@ namespace Eum.gRPC.Server.Proto.Contact {
             "ChRQcm90b3MvY29udGFjdC5wcm90bxIHQ29udGFjdCIgCg5Db250YWN0UmVx",
             "dWVzdBIOCgZtYWlsSWQYASABKA0iIAoNQ29udGFjdFJlcGxheRIPCgdtZXNz",
             "YWdlGAEgASgJMkwKB0NvbnRhY3QSQQoOR2V0Q29udGFjdExpc3QSFy5Db250",
-            "YWN0LkNvbnRhY3RSZXF1ZXN0GhYuQ29udGFjdC5Db250YWN0UmVwbGF5QiCq",
-            "Ah1FdW0uZ1JQQy5TZXJ2ZXIuUHJvdG8uQ29udGFjdGIGcHJvdG8z"));
+            "YWN0LkNvbnRhY3RSZXF1ZXN0GhYuQ29udGFjdC5Db250YWN0UmVwbGF5Qheq",
+            "AhRFdW0uZ1JQQy5TZXJ2ZXIuTWFpbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Proto.Contact.ContactRequest), global::Eum.gRPC.Server.Proto.Contact.ContactRequest.Parser, new[]{ "MailId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Proto.Contact.ContactReplay), global::Eum.gRPC.Server.Proto.Contact.ContactReplay.Parser, new[]{ "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Mail.ContactRequest), global::Eum.gRPC.Server.Mail.ContactRequest.Parser, new[]{ "MailId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Mail.ContactReplay), global::Eum.gRPC.Server.Mail.ContactReplay.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
     #endregion
@@ -57,7 +57,7 @@ namespace Eum.gRPC.Server.Proto.Contact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Eum.gRPC.Server.Proto.Contact.ContactReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Eum.gRPC.Server.Mail.ContactReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -249,7 +249,7 @@ namespace Eum.gRPC.Server.Proto.Contact {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Eum.gRPC.Server.Proto.Contact.ContactReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Eum.gRPC.Server.Mail.ContactReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

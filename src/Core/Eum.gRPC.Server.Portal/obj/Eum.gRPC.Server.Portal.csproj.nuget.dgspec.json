@@ -4,12 +4,12 @@
     "D:\\01.Repository\\EumV3\\src\\Core\\Eum.gRPC.Server.Portal\\Eum.gRPC.Server.Portal.csproj": {}
   },
   "projects": {
-    "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Infrastructure.csproj": {
+    "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Infrastructure.csproj",
-        "projectName": "Eum.Core.Infrastructure",
-        "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Infrastructure.csproj",
+        "projectUniqueName": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Shared.csproj",
+        "projectName": "Eum.Core.Shared",
+        "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Shared.csproj",
         "packagesPath": "C:\\Users\\carrena\\.nuget\\packages\\",
         "outputPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
@@ -32,11 +32,7 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {
-              "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj": {
-                "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -48,16 +44,6 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "dependencies": {
-            "Google.Protobuf": {
-              "target": "Package",
-              "version": "[3.22.0, )"
-            },
-            "Grpc.AspNetCore.Server.ClientFactory": {
-              "target": "Package",
-              "version": "[2.51.0, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -78,12 +64,12 @@
         }
       }
     },
-    "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj": {
+    "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj",
-        "projectName": "Eum.Core.Model",
-        "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj",
+        "projectUniqueName": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj",
+        "projectName": "Eum.Core",
+        "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj",
         "packagesPath": "C:\\Users\\carrena\\.nuget\\packages\\",
         "outputPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\obj\\",
         "projectStyle": "PackageReference",
@@ -167,11 +153,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Infrastructure.csproj": {
-                "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Infrastructure.csproj"
+              "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Shared.csproj": {
+                "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Shared.csproj"
               },
-              "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj": {
-                "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj"
+              "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj": {
+                "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj"
               }
             }
           }

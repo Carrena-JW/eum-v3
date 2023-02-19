@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4PnZiZwyRS0SVHnRRISxMNVXWRwvbEqd4hd2hs6KouwM/bzvT5XTJhmhS3Ugn8vNkVXzZYJ0glp/sb+emF0o/Q==",
+  "dgSpecHash": "hw/oD+ZwLp02goRbhCxQhxqxJf54/SJmkkfN7oYKqMGfsOkls1K7tLPR+si2b3eZoP8mv+jZ3bWl+m+zfCqtvw==",
   "success": true,
-  "projectFilePath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj",
+  "projectFilePath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

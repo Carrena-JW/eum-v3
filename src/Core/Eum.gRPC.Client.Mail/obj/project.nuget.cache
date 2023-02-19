@@ -1,28 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vCDZPU6ZFTBHXbcujQbctZfgDcflMzty1F143Fv43KSwNboSkCbRHTMsVn6IRf10sO0/oJ8G5K5BpxilgOzKtA==",
+  "dgSpecHash": "NTHAS92+KNAviM8ARZDCTsXvLtOc/nEoZ0UaCxMF0ScOJu4RI5xeVOgZfHRTidgce1oyAD59bnrlyXpIEZu54g==",
   "success": true,
   "projectFilePath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.gRPC.Client.Mail\\Eum.gRPC.Client.Mail.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\carrena\\.nuget\\packages\\google.protobuf\\3.22.0\\google.protobuf.3.22.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.aspnetcore.server\\2.51.0\\grpc.aspnetcore.server.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.51.0\\grpc.aspnetcore.server.clientfactory.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.core.api\\2.51.0\\grpc.core.api.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.net.client\\2.51.0\\grpc.net.client.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.net.clientfactory\\2.51.0\\grpc.net.clientfactory.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.net.common\\2.51.0\\grpc.net.common.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.tools\\2.51.0\\grpc.tools.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.3\\microsoft.extensions.configuration.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.3\\microsoft.extensions.configuration.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.0.3\\microsoft.extensions.configuration.binder.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.0.3\\microsoft.extensions.dependencyinjection.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.3\\microsoft.extensions.dependencyinjection.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.http\\3.0.3\\microsoft.extensions.http.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.logging\\3.0.3\\microsoft.extensions.logging.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.options\\3.0.3\\microsoft.extensions.options.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.3\\microsoft.extensions.primitives.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+    "C:\\Users\\carrena\\.nuget\\packages\\grpc.tools\\2.51.0\\grpc.tools.2.51.0.nupkg.sha512"
   ],
   "logs": []
 }

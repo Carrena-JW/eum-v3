@@ -1,13 +1,12 @@
-using Eum.gRPC.Server.Proto.Contact;
 using Grpc.Core;
-using static Eum.gRPC.Server.Proto.Contact.Contact;
+using static Eum.gRPC.Server.Mail.Contact;
 
-namespace Eum.gRPC.Server.Mail.Services
+namespace Eum.gRPC.Server.Mail.Endpoints
 {
-    public class ContactService : ContactBase
+    public class ContactEndpoint : ContactBase
     {
-        private readonly ILogger<MailService> _logger;
-        public ContactService(ILogger<MailService> logger)
+        private readonly ILogger<ContactEndpoint> _logger;
+        public ContactEndpoint(ILogger<ContactEndpoint> logger)
         {
             _logger = logger;
         }

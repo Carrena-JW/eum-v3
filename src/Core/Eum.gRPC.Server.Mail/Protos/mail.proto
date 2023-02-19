@@ -1,7 +1,7 @@
 
 syntax = "proto3";
 
-option csharp_namespace = "Eum.gRPC.Server.Proto.Mail";
+option csharp_namespace = "Eum.gRPC.Server.Mail";
 
 package Mail;
 

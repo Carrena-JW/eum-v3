@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feelanet.Module", "Feelanet.Module\Feelanet.Module.csproj", "{A543F27E-9BAD-4D78-9325-017F82817DD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eum.Host.Web", "..\Eum.Host.Web\Eum.Host.Web.csproj", "{4C13E71E-04FA-45EC-B1BB-B82B70D0B897}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A543F27E-9BAD-4D78-9325-017F82817DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A543F27E-9BAD-4D78-9325-017F82817DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A543F27E-9BAD-4D78-9325-017F82817DD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C13E71E-04FA-45EC-B1BB-B82B70D0B897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C13E71E-04FA-45EC-B1BB-B82B70D0B897}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C13E71E-04FA-45EC-B1BB-B82B70D0B897}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C13E71E-04FA-45EC-B1BB-B82B70D0B897}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

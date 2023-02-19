@@ -7,12 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-	  <ProjectReference Include="..\Eum.Core.Infrastructure\Eum.Core.Infrastructure.csproj" />
+	  <ProjectReference Include="..\Eum.Core.Infrastructure\Eum.Core.Shared.csproj" />
+	  <ProjectReference Include="..\Eum.gRPC.Common\Eum.gRPC.Core.csproj" />
+	  <ProjectReference Include="..\Eum.gRPC.Core.Infrastructure\Eum.gRPC.Shared.csproj" />
+	  <ProjectReference Include="..\Eum.gRPC.Infrastructure\Eum.gRPC.Infrastructure.csproj" />
 	   
 </ItemGroup>
 	
   <ItemGroup>
-	  <Protobuf Include="**\*.proto" GrpcServices="Server" />
+	  <Protobuf Include="**\*.proto" GrpcServices="Both" />
   </ItemGroup>
 	
   <ItemGroup>

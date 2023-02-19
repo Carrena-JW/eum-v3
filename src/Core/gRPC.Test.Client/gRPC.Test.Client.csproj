@@ -8,12 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\calendar.proto" />
-    <None Remove="Protos\contact.proto" />
-    <None Remove="Protos\mail.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.22.0" />
     <PackageReference Include="Grpc.Net.Client" Version="2.51.0" />
     <PackageReference Include="Grpc.Tools" Version="2.51.0">
@@ -25,5 +19,13 @@
 	<ItemGroup>
 		 
 		<Protobuf Include="*\*.proto" GrpcServices="Client" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <None Remove="Protos\mail.proto" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Protobuf Update="Protos\mail.proto" GrpcServices="Both" />
 	</ItemGroup>
 </Project>

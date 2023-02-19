@@ -1,13 +1,12 @@
-using Eum.gRPC.Server.Proto.Calendar;
 using Grpc.Core;
-using static Eum.gRPC.Server.Proto.Calendar.Calendar;
+using static Eum.gRPC.Server.Mail.Calendar;
 
-namespace Eum.gRPC.Server.Mail.Services
+namespace Eum.gRPC.Server.Mail.Endpoints
 {
-    public class CalendarService : CalendarBase
+    public class CalendarEndpoint : CalendarBase
     {
-        private readonly ILogger<MailService> _logger;
-        public CalendarService(ILogger<MailService> logger)
+        private readonly ILogger<CalendarEndpoint> _logger;
+        public CalendarEndpoint(ILogger<CalendarEndpoint> logger)
         {
             _logger = logger;
         }

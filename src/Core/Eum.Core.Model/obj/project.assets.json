@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj",
-      "projectName": "Eum.Core.Model",
-      "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.Model.csproj",
+      "projectUniqueName": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj",
+      "projectName": "Eum.Core",
+      "projectPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\Eum.Core.csproj",
       "packagesPath": "C:\\Users\\carrena\\.nuget\\packages\\",
       "outputPath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Model\\obj\\",
       "projectStyle": "PackageReference",

@@ -1,27 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kOp146Kq3dDM0YW+qjEpEDKZ6iGwklrjvqtttqoZxItvgK89YR4/K45xf5wfPhs19FqUxBEgTG5uUhlvKqUwYg==",
+  "dgSpecHash": "udDvi9T3yywhP/5nbFX/jf75WTxPsW4omjTS2MOorhiswUoSDemvePGzP5eBhLHqWUoMto7cYb73y68fpEuf6A==",
   "success": true,
-  "projectFilePath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Infrastructure.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\carrena\\.nuget\\packages\\google.protobuf\\3.22.0\\google.protobuf.3.22.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.aspnetcore.server\\2.51.0\\grpc.aspnetcore.server.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.aspnetcore.server.clientfactory\\2.51.0\\grpc.aspnetcore.server.clientfactory.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.core.api\\2.51.0\\grpc.core.api.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.net.client\\2.51.0\\grpc.net.client.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.net.clientfactory\\2.51.0\\grpc.net.clientfactory.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\grpc.net.common\\2.51.0\\grpc.net.common.2.51.0.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.configuration\\3.0.3\\microsoft.extensions.configuration.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.0.3\\microsoft.extensions.configuration.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.configuration.binder\\3.0.3\\microsoft.extensions.configuration.binder.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.0.3\\microsoft.extensions.dependencyinjection.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.0.3\\microsoft.extensions.dependencyinjection.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.http\\3.0.3\\microsoft.extensions.http.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.logging\\3.0.3\\microsoft.extensions.logging.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.0.3\\microsoft.extensions.logging.abstractions.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.options\\3.0.3\\microsoft.extensions.options.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\microsoft.extensions.primitives\\3.0.3\\microsoft.extensions.primitives.3.0.3.nupkg.sha512",
-    "C:\\Users\\carrena\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
-  ],
+  "projectFilePath": "D:\\01.Repository\\EumV3\\src\\Core\\Eum.Core.Infrastructure\\Eum.Core.Shared.csproj",
+  "expectedPackageFiles": [],
   "logs": []
 }

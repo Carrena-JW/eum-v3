@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Eum.gRPC.Server.Proto.Mail {
+namespace Eum.gRPC.Server.Mail {
 
   /// <summary>Holder for reflection information generated from Protos/mail.proto</summary>
   public static partial class MailReflection {
@@ -27,13 +27,12 @@ namespace Eum.gRPC.Server.Proto.Mail {
             "ChFQcm90b3MvbWFpbC5wcm90bxIETWFpbCIdCgtNYWlsUmVxdWVzdBIOCgZt",
             "YWlsSWQYASABKA0iHQoKTWFpbFJlcGxheRIPCgdtZXNzYWdlGAEgASgJMjoK",
             "BE1haWwSMgoLR2V0TWFpbExpc3QSES5NYWlsLk1haWxSZXF1ZXN0GhAuTWFp",
-            "bC5NYWlsUmVwbGF5Qh2qAhpFdW0uZ1JQQy5TZXJ2ZXIuUHJvdG8uTWFpbGIG",
-            "cHJvdG8z"));
+            "bC5NYWlsUmVwbGF5QheqAhRFdW0uZ1JQQy5TZXJ2ZXIuTWFpbGIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Proto.Mail.MailRequest), global::Eum.gRPC.Server.Proto.Mail.MailRequest.Parser, new[]{ "MailId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Proto.Mail.MailReplay), global::Eum.gRPC.Server.Proto.Mail.MailReplay.Parser, new[]{ "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Mail.MailRequest), global::Eum.gRPC.Server.Mail.MailRequest.Parser, new[]{ "MailId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Mail.MailReplay), global::Eum.gRPC.Server.Mail.MailReplay.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
     #endregion
@@ -57,7 +56,7 @@ namespace Eum.gRPC.Server.Proto.Mail {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Eum.gRPC.Server.Proto.Mail.MailReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Eum.gRPC.Server.Mail.MailReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -249,7 +248,7 @@ namespace Eum.gRPC.Server.Proto.Mail {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Eum.gRPC.Server.Proto.Mail.MailReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Eum.gRPC.Server.Mail.MailReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]

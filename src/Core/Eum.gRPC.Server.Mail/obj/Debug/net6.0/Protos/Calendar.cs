@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace Eum.gRPC.Server.Proto.Calendar {
+namespace Eum.gRPC.Server.Mail {
 
   /// <summary>Holder for reflection information generated from Protos/calendar.proto</summary>
   public static partial class CalendarReflection {
@@ -28,13 +28,12 @@ namespace Eum.gRPC.Server.Proto.Calendar {
             "UmVxdWVzdBIOCgZtYWlsSWQYASABKA0iIQoOQ2FsZW5kYXJSZXBsYXkSDwoH",
             "bWVzc2FnZRgBIAEoCTJSCghDYWxlbmRhchJGCg9HZXRDYWxlbmRhckxpc3QS",
             "GS5DYWxlbmRhci5DYWxlbmRhclJlcXVlc3QaGC5DYWxlbmRhci5DYWxlbmRh",
-            "clJlcGxheUIhqgIeRXVtLmdSUEMuU2VydmVyLlByb3RvLkNhbGVuZGFyYgZw",
-            "cm90bzM="));
+            "clJlcGxheUIXqgIURXVtLmdSUEMuU2VydmVyLk1haWxiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Proto.Calendar.CalendarRequest), global::Eum.gRPC.Server.Proto.Calendar.CalendarRequest.Parser, new[]{ "MailId" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Proto.Calendar.CalendarReplay), global::Eum.gRPC.Server.Proto.Calendar.CalendarReplay.Parser, new[]{ "Message" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Mail.CalendarRequest), global::Eum.gRPC.Server.Mail.CalendarRequest.Parser, new[]{ "MailId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Eum.gRPC.Server.Mail.CalendarReplay), global::Eum.gRPC.Server.Mail.CalendarReplay.Parser, new[]{ "Message" }, null, null, null, null)
           }));
     }
     #endregion
@@ -58,7 +57,7 @@ namespace Eum.gRPC.Server.Proto.Calendar {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Eum.gRPC.Server.Proto.Calendar.CalendarReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Eum.gRPC.Server.Mail.CalendarReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -250,7 +249,7 @@ namespace Eum.gRPC.Server.Proto.Calendar {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::Eum.gRPC.Server.Proto.Calendar.CalendarReflection.Descriptor.MessageTypes[1]; }
+      get { return global::Eum.gRPC.Server.Mail.CalendarReflection.Descriptor.MessageTypes[1]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
