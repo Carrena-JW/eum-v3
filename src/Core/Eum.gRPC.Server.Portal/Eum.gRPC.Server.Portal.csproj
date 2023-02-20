@@ -9,10 +9,17 @@
   <ItemGroup>
     <ProjectReference Include="..\Eum.Core.Infrastructure\Eum.Core.Shared.csproj" />
     <ProjectReference Include="..\Eum.Core.Model\Eum.Core.csproj" />
+    <ProjectReference Include="..\Eum.gRPC.Common\Eum.gRPC.Core.csproj" />
+    <ProjectReference Include="..\Eum.gRPC.Core.Infrastructure\Eum.gRPC.Shared.csproj" />
+    <ProjectReference Include="..\Eum.gRPC.Infrastructure\Eum.gRPC.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services" />
   </ItemGroup>
 
 </Project>
