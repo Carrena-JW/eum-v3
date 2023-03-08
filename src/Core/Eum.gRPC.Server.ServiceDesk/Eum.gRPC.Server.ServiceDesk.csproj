@@ -15,10 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Modules\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Eum.Core.Model\Eum.Core.csproj" />
     <ProjectReference Include="..\Eum.Extensions.Logging\Eum.Extensions.Logging.csproj" />
   </ItemGroup>
