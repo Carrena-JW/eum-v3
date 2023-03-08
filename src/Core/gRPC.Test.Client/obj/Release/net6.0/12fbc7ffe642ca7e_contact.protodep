@@ -1,2 +1,0 @@
-obj\Release\net6.0\Protos/Contact.cs \
-obj\Release\net6.0\Protos/ContactGrpc.cs: Protos/contact.proto

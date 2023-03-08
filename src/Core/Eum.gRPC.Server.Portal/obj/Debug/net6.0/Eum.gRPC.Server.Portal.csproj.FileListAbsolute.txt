@@ -1,6 +1,0 @@
-D:\01.Repository\EumV3\src\Core\Eum.gRPC.Server.Portal\obj\Debug\net6.0\Eum.gRPC.Server.Portal.csproj.AssemblyReference.cache
-D:\01.Repository\EumV3\src\Core\Eum.gRPC.Server.Portal\obj\Debug\net6.0\Eum.gRPC.Server.Portal.GeneratedMSBuildEditorConfig.editorconfig
-D:\01.Repository\EumV3\src\Core\Eum.gRPC.Server.Portal\obj\Debug\net6.0\Eum.gRPC.Server.Portal.AssemblyInfoInputs.cache
-D:\01.Repository\EumV3\src\Core\Eum.gRPC.Server.Portal\obj\Debug\net6.0\Eum.gRPC.Server.Portal.AssemblyInfo.cs
-D:\01.Repository\EumV3\src\Core\Eum.gRPC.Server.Portal\obj\Debug\net6.0\Eum.gRPC.Server.Portal.csproj.CoreCompileInputs.cache
-D:\01.Repository\EumV3\src\Core\Eum.gRPC.Server.Portal\obj\Debug\net6.0\Eum.gRPC.Server.Portal.MvcApplicationPartsAssemblyInfo.cache
