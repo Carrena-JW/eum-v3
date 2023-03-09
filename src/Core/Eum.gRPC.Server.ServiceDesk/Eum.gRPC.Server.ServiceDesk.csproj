@@ -6,18 +6,20 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-	<ItemGroup>
-		<Protobuf Include="Protos\greet.proto" GrpcServices="Server" />
-	</ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
-    <PackageReference Include="Grpc.AspNetCore.Server.Reflection" Version="2.51.0" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Eum.Core.Model\Eum.Core.csproj" />
     <ProjectReference Include="..\Eum.Extensions.Logging\Eum.Extensions.Logging.csproj" />
+    <ProjectReference Include="..\Eum.ServiceClient\Eum.ServiceClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Endpoints\Authentication\" />
+    <Folder Include="Endpoints\Management\" />
   </ItemGroup>
 
 </Project>

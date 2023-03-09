@@ -22,9 +22,8 @@ namespace Eum.Core.Data
             return new SqlConnection(_connectionString);
         }
 
-        protected DatabaseRepositoryBase(string connectionStringKey, IServiceProvider serviceProvider)
+        protected DatabaseRepositoryBase(string connectionStringKey, IConfiguration configuration)
         {
-            var configuration = serviceProvider.GetService(typeof(IConfiguration)) as IConfiguration;
             string? connectionString = configuration!.GetValue<string>($"ConnectionStrings:{connectionStringKey}");
             _connectionString = connectionString ??
                                 throw new NullReferenceException(
