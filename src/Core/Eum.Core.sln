@@ -37,7 +37,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.gRPC.Server.ServiceDesk
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.Extensions.Logging", "Eum.Extensions.Logging\Eum.Extensions.Logging.csproj", "{53E35DB1-A3FF-4EF2-A00A-868127DE15DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eum.ServiceClient", "Eum.ServiceClient\Eum.ServiceClient.csproj", "{FD299613-4ED2-4821-AB60-DCCA18126C5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.ServiceClient", "Eum.ServiceClient\Eum.ServiceClient.csproj", "{FD299613-4ED2-4821-AB60-DCCA18126C5B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.gRPC.Server.Auth", "Eum.gRPC.Server.Auth\Eum.gRPC.Server.Auth.csproj", "{0A9F877E-F48D-42E9-B21F-8C914A4AD2EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{FD299613-4ED2-4821-AB60-DCCA18126C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD299613-4ED2-4821-AB60-DCCA18126C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD299613-4ED2-4821-AB60-DCCA18126C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A9F877E-F48D-42E9-B21F-8C914A4AD2EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A9F877E-F48D-42E9-B21F-8C914A4AD2EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A9F877E-F48D-42E9-B21F-8C914A4AD2EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A9F877E-F48D-42E9-B21F-8C914A4AD2EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{91B3F15A-FA91-488A-9078-6E4865E64D2B} = {7939FA51-103A-44C5-9BD8-B9B211D381D7}
 		{53E35DB1-A3FF-4EF2-A00A-868127DE15DF} = {4FF7F91E-13DE-4CBF-97BF-8FFD853BCD0B}
 		{FD299613-4ED2-4821-AB60-DCCA18126C5B} = {4FF7F91E-13DE-4CBF-97BF-8FFD853BCD0B}
+		{0A9F877E-F48D-42E9-B21F-8C914A4AD2EC} = {7939FA51-103A-44C5-9BD8-B9B211D381D7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {97C9EB42-A323-42B4-9090-869D14180548}
