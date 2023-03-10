@@ -19,7 +19,8 @@
 
   <ItemGroup>
     <Folder Include="Endpoints\Authentication\" />
-    <Folder Include="Endpoints\Management\" />
+    <Folder Include="Endpoints\Process\" />
+    <Folder Include="Modules\Process\Domains\" />
   </ItemGroup>
 
 </Project>
