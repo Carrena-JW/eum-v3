@@ -1,3 +1,5 @@
+using Eum.ServiceClient.Contracts.Auth.Endpoints;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddGrpcClient<IAuthEndpoint>(o =>
+ {
+     o.Address = new Uri("https://localhost:5001");
+ });
 
 var app = builder.Build();
 
@@ -25,12 +31,12 @@ app.MapControllers();
 app.Run();
 
 
-인증처리 
+//인증처리 
 
-    커스텀 라우터 
+//    커스텀 라우터 
 
-    api/mail/cal 
+//    api/mail/cal 
 
 
 
-    -> getCalList()
+//    -> getCalList()

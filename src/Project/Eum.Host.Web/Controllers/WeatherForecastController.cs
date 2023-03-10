@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Eum.
+
 
 namespace Eum.Host.Web.Controllers
 {
@@ -22,7 +22,7 @@ namespace Eum.Host.Web.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public string Get()
         {
-
+            return String.Empty;
 
             
             //return Enumerable.Range(1, 5).Select(index => new WeatherForecast

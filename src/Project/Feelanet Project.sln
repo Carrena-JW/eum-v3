@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Feelanet.Module", "Feelanet.Module\Feelanet.Module\Feelanet.Module.csproj", "{6A8FD6B9-520F-4783-9A4C-48B8166F57C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Feelanet.Module", "Feelanet.Module\Feelanet.Module\Feelanet.Module.csproj", "{6A8FD6B9-520F-4783-9A4C-48B8166F57C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eum.Host.Web", "Eum.Host.Web\Eum.Host.Web.csproj", "{81A7E0A1-BD90-49C5-B2F1-289A077B9ACF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.Host.Web", "Eum.Host.Web\Eum.Host.Web.csproj", "{81A7E0A1-BD90-49C5-B2F1-289A077B9ACF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.ServiceClient", "..\Core\Eum.ServiceClient\Eum.ServiceClient.csproj", "{A49CB0A7-B7D4-4CB4-8D97-93EA8023EAC4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{81A7E0A1-BD90-49C5-B2F1-289A077B9ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81A7E0A1-BD90-49C5-B2F1-289A077B9ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{81A7E0A1-BD90-49C5-B2F1-289A077B9ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A49CB0A7-B7D4-4CB4-8D97-93EA8023EAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A49CB0A7-B7D4-4CB4-8D97-93EA8023EAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A49CB0A7-B7D4-4CB4-8D97-93EA8023EAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A49CB0A7-B7D4-4CB4-8D97-93EA8023EAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
