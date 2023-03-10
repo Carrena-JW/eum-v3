@@ -1,9 +1,9 @@
-﻿using Eum.Core.Data;
-using Eum.gRPC.Server.Auth.Modules.Token.Domains;
-using Eum.gRPC.Server.Auth.Modules.Token.Exceptions;
-using Eum.gRPC.Server.Auth.Modules.Token.Repositories;
+﻿using Eum.Core.Shared.Exceptions;
+using Eum.Core.Shared.Models;
+using Eum.Core.Shared.Repositories;
+using Eum.Core.Data;
 
-namespace Eum.gRPC.Server.Auth.Modules.Token.Services
+namespace Eum.Core.Shared.Services
 {
     public interface IPersonService : IService
     {

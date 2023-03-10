@@ -1,6 +1,6 @@
 ﻿
 
-Eum.Common.Shared
+Eum.Core.Shared
 
 - 공통 영역 (인증, 솔루션 설정, 솔루션 로깅, 솔루션 파일, 솔루션 조직정보 등등 )
 - 해당 프로젝트에서는 모듈에서 사용하는 Nuget Packages 가 설치됨

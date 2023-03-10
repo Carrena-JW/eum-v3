@@ -1,4 +1,4 @@
-﻿using Eum.gRPC.Server.Auth.Modules.Token.Services;
+﻿using Eum.Core.Shared.Services;
 using Eum.ServiceClient.Contracts.Auth.Data.Token;
 using Eum.ServiceClient.Contracts.Auth.Endpoints;
 using ProtoBuf.Grpc;

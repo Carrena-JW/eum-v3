@@ -1,10 +1,11 @@
-﻿using Eum.Core.Data;
-using Eum.gRPC.Server.Auth.Modules.Token.Domains;
+﻿using Eum.Core.Shared.Models;
+using Eum.Core.Data;
+using Microsoft.Extensions.Configuration;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 
-namespace Eum.gRPC.Server.Auth.Modules.Token.Repositories
+namespace Eum.Core.Shared.Repositories
 {
     public interface IPersonRepository : IRepository
     {

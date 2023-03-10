@@ -40,12 +40,12 @@ namespace Eum.Core.Module
                             service.AddScoped(@interface, type);
                             break;
 
-                        case RegisterServiceOptions.Transient:
-                            service.AddTransient(@interface, type);
+                        case RegisterServiceOptions.Singleton:
+                            service.AddSingleton(@interface, type);
                             break;
 
                         default:
-                            service.AddSingleton(@interface, type);
+                            service.AddTransient(@interface, type);
                             break;
                     }
                 }
@@ -57,12 +57,12 @@ namespace Eum.Core.Module
                             service.AddScoped(type);
                             break;
 
-                        case RegisterServiceOptions.Transient:
-                            service.AddTransient(type);
+                        case RegisterServiceOptions.Singleton:
+                            service.AddSingleton(type);
                             break;
 
                         default:
-                            service.AddSingleton(type);
+                            service.AddTransient(type);
                             break;
                     }
                 }

@@ -1,5 +1,6 @@
 using Eum.Core;
 using Eum.Core.Module;
+using Eum.Core.Shared;
 using Eum.Extensions.Logging;
 using Eum.gRPC.Server.Auth.Endpoints.Auth;
 using Eum.gRPC.Server.Auth.Endpoints.Token;
@@ -17,8 +18,12 @@ builder.Services.ConfigureRepositories();
 builder.Services.ConfigureServices();
 builder.Host.UseEumLogging();
 
+new SharedModule().ConfigureServices(builder.Services);
+
 var app = builder.Build();
 app.ConfigureEumCore();
+
+new SharedModule().ApplicationLoaded(app.Services);
 
 var logger = app.Services.GetService<ILogger<Program>>();
 logger!.LogInformation("Test!!");

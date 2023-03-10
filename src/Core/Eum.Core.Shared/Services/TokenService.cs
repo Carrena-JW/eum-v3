@@ -1,16 +1,20 @@
-﻿using Eum.Core.Data;
-using Eum.gRPC.Server.Auth.Modules.Token.Domains;
-using Eum.gRPC.Server.Auth.Modules.Token.Repositories;
+﻿using Eum.Core.Shared.Domains;
+using Eum.Core.Shared.Models;
+using Eum.Core.Shared.Repositories;
+using Eum.Core.Data;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace Eum.gRPC.Server.Auth.Modules.Token.Services
+namespace Eum.Core.Shared.Services
 {
     public interface ITokenService : IService
     {
         Task<IToken> CreateAsync(string username, int? expires = null);
+        Task<string> CreateEumCookieValue(string inputUserName);
         Task<IToken> CreateForServiceAsync(string serviceName, int? expires = null);
         ClaimsPrincipal GetPrincipalFromToken(string token);
     }
@@ -21,16 +25,17 @@ namespace Eum.gRPC.Server.Auth.Modules.Token.Services
         protected readonly IPersonRepository _personRepository;
         protected readonly IAppConfigRepository _appConfigRepository;
         private readonly IHashService _hashService;
+        private readonly IEncryptService _encryptService;
         protected readonly SecurityKey _securityKey;
         protected readonly string _securityAlgorithm;
         protected readonly SigningCredentials _signingCredentials;
-
 
         public TokenService(
             ILogger<TokenService> logger,
             IConfiguration configuration,
             IPersonRepository personRepository,
             IHashService hashService,
+            IEncryptService encryptService,
             IAppConfigRepository appConfigRepository)
         {
             _logger = logger;
@@ -38,6 +43,7 @@ namespace Eum.gRPC.Server.Auth.Modules.Token.Services
             _personRepository = personRepository;
             _appConfigRepository = appConfigRepository;
             _hashService = hashService;
+            _encryptService = encryptService;
 
             // 비밀키 생성
             var secKeyStr = _configuration.GetValue("AppSettings:Jwt:SecretKey", string.Empty);
@@ -49,6 +55,18 @@ namespace Eum.gRPC.Server.Auth.Modules.Token.Services
         }
 
         #region Token
+
+        public async Task<string> CreateEumCookieValue(string username)
+        {
+            var tokenSeparator = _configuration.GetValue("AppSettings:Jwt:TokenSeparator", string.Empty);
+            var token = await this.CreateAsync(username);
+            var sbCookieValue = new StringBuilder();
+            sbCookieValue.Append(token.AccessToken);
+            sbCookieValue.Append(tokenSeparator);
+            sbCookieValue.Append(token.RefreshToken);
+            var szCookieValue = _encryptService.EncryptToString(sbCookieValue.ToString());
+            return szCookieValue;
+        }
 
         public virtual Task<IToken> CreateAsync(string username, int? expires = null)
         {

@@ -13,7 +13,7 @@ namespace Eum.ServiceClient.Contracts.Auth.Data.Auth
     public class SignInReply
     {
         [DataMember(Order = 1)]
-        public TokenReply Token { get; set; }
+        public string Token { get; set; }
 
         [DataMember(Order = 2)]
         public bool Success { get; set; }

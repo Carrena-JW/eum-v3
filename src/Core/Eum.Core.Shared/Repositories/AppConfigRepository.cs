@@ -1,9 +1,11 @@
-﻿using Eum.Core.Data;
-using Eum.gRPC.Server.Auth.Modules.Token.Domains;
+﻿using Eum.Core.Shared.Models;
+using Eum.Core.Data;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System.ComponentModel;
 using System.Data;
 
-namespace Eum.gRPC.Server.Auth.Modules.Token.Repositories
+namespace Eum.Core.Shared.Repositories
 {
     // TODO: 공통으로 빼야 함.
     public interface IAppConfigRepository : IRepository

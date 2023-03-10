@@ -1,4 +1,4 @@
-﻿namespace Eum.gRPC.Server.Auth.Modules.Token.Domains
+﻿namespace Eum.Core.Shared.Models
 {
     // TODO: 공통으로 빼야 함.
     public class AppConfig

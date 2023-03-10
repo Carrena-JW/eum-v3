@@ -1,5 +1,5 @@
-﻿using Eum.gRPC.Server.Auth.Modules.Token.Exceptions;
-using Eum.gRPC.Server.Auth.Modules.Token.Services;
+﻿using Eum.Core.Shared.Services;
+using Eum.gRPC.Server.Auth.Modules.Token.Exceptions;
 using Eum.ServiceClient.Contracts.Auth.Data.Auth;
 using Eum.ServiceClient.Contracts.Auth.Data.Token;
 using Eum.ServiceClient.Contracts.Auth.Endpoints;
@@ -35,12 +35,8 @@ namespace Eum.gRPC.Server.Auth.Endpoints.Auth
                 var hashPassword = _hashService.GetHashString(inputPassword);
                 if (_hashService.IsMatchTwoHashString(hashPassword, user.Password))
                 {
-                    var token = await _tokenService.CreateAsync(inputUserName);
-                    reply.Token = new TokenReply
-                    {
-                        AccessToken = token.AccessToken,
-                        RefreshToken = token.RefreshToken
-                    };
+                    var token = await _tokenService.CreateEumCookieValue(inputUserName);
+                    reply.Token = token;
                 }
                 else
                 {

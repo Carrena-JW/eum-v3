@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Eum.gRPC.Server.Auth.Modules.Token.Services
+namespace Eum.Core.Shared.Services
 {
     public interface IHashService : IService
     {

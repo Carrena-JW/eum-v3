@@ -14,12 +14,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Eum.Core.Model\Eum.Core.csproj" />
+    <ProjectReference Include="..\Eum.Core.Shared\Eum.Core.Shared.csproj" />
     <ProjectReference Include="..\Eum.Extensions.Logging\Eum.Extensions.Logging.csproj" />
     <ProjectReference Include="..\Eum.ServiceClient\Eum.ServiceClient.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Modules\Auth\" />
+    <Folder Include="Modules\Token\Repositories\" />
+    <Folder Include="Modules\Token\Services\" />
   </ItemGroup>
 
 </Project>

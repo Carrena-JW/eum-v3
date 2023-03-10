@@ -1,4 +1,4 @@
-﻿namespace Eum.gRPC.Server.Auth.Modules.Token.Domains
+﻿namespace Eum.Core.Shared.Models
 {
     public class Person
     {
