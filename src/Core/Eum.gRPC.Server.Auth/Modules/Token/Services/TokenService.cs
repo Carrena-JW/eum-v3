@@ -20,6 +20,7 @@ namespace Eum.gRPC.Server.Auth.Modules.Token.Services
         protected readonly IConfiguration _configuration;
         protected readonly IPersonRepository _personRepository;
         protected readonly IAppConfigRepository _appConfigRepository;
+        private readonly IHashService _hashService;
         protected readonly SecurityKey _securityKey;
         protected readonly string _securityAlgorithm;
         protected readonly SigningCredentials _signingCredentials;
@@ -29,12 +30,14 @@ namespace Eum.gRPC.Server.Auth.Modules.Token.Services
             ILogger<TokenService> logger,
             IConfiguration configuration,
             IPersonRepository personRepository,
+            IHashService hashService,
             IAppConfigRepository appConfigRepository)
         {
             _logger = logger;
             _configuration = configuration;
             _personRepository = personRepository;
             _appConfigRepository = appConfigRepository;
+            _hashService = hashService;
 
             // 비밀키 생성
             var secKeyStr = _configuration.GetValue("AppSettings:Jwt:SecretKey", string.Empty);
@@ -87,28 +90,18 @@ namespace Eum.gRPC.Server.Auth.Modules.Token.Services
             var token = tokenHandler.CreateToken(tokenDescriptor);
             var accessToken = tokenHandler.WriteToken(token);
 
-            // refresh token
-            var expiresRefreshTokenMins = _appConfigRepository.GetByKey("TokenExpiresMinutes", 720);
-            tokenDescriptor = new SecurityTokenDescriptor
-            {
-                Subject = new ClaimsIdentity(claims),
-                Issuer = _configuration.GetValue("AppSettings:Jwt:Issuer", string.Empty),
-                Audience = _configuration.GetValue("AppSettings:Jwt:Audience", string.Empty),
-                Expires = DateTime.UtcNow.AddMinutes(expiresRefreshTokenMins),
-                //NotBefore = DateTime.Now,
-                SigningCredentials = _signingCredentials
-            };
-            tokenHandler = new JwtSecurityTokenHandler();
-            token = tokenHandler.CreateToken(tokenDescriptor);
-            var refreshToken = tokenHandler.WriteToken(token);
-
             return Task.FromResult<IToken>(new JsonWebToken
             {
-                AccessToken = tokenHandler.WriteToken(token),
-                RefreshToken = refreshToken,
+                AccessToken = accessToken,
+                RefreshToken = GetRefreshToken(),
                 Expires = tokenDescriptor.Expires.Value,
                 Claims = claims
             });
+        }
+
+        private string GetRefreshToken()
+        {
+            return _hashService.GetHashString(Guid.NewGuid().ToString());
         }
         #endregion Token
 

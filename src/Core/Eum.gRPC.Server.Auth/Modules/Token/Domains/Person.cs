@@ -12,5 +12,6 @@
         public string DeptName { get; set; }
         public string TitleCode { get; set; }
         public string TitleName { get; set; }
+        public string Password { get; set; }
     }
 }

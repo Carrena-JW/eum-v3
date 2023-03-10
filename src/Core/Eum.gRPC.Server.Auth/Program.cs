@@ -1,6 +1,7 @@
 using Eum.Core;
 using Eum.Core.Module;
 using Eum.Extensions.Logging;
+using Eum.gRPC.Server.Auth.Endpoints.Auth;
 using Eum.gRPC.Server.Auth.Endpoints.Token;
 using ProtoBuf.Grpc.Server;
 
@@ -23,6 +24,7 @@ var logger = app.Services.GetService<ILogger<Program>>();
 logger!.LogInformation("Test!!");
 
 // Configure the HTTP request pipeline.
+app.MapGrpcService<AuthEndpoint>();
 app.MapGrpcService<TokenEndpoint>();
 app.MapCodeFirstGrpcReflectionService();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
