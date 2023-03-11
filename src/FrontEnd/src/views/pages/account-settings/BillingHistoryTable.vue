@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import type { Invoice } from '@/@fake-db/types'
-// import { useInvoiceStore } from '@/views/apps/invoice/useInvoiceStore'
+// import { useCaseStore } from '@/views/case/useCaseStore'
 import { avatarText } from '@core/utils/formatters'
 
 // 👉 Store
-// const invoiceListStore = useInvoiceStore()
+// const invoiceListStore = useCaseStore()
 
 const searchQuery = ref('')
 const selectedStatus = ref()
@@ -168,7 +168,7 @@ const computedMoreList = computed(() => {
         >
           <!-- 👉 Id -->
           <td>
-            <RouterLink :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
+            <RouterLink :to="{ name: 'case-preview-id', params: { id: invoice.id } }">
               #{{ invoice.id }}
             </RouterLink>
           </td>
@@ -244,7 +244,7 @@ const computedMoreList = computed(() => {
               <VIcon icon="mdi-delete-outline" />
             </IconBtn>
 
-            <IconBtn :to="{ name: 'apps-invoice-preview-id', params: { id: invoice.id } }">
+            <IconBtn :to="{ name: 'case-preview-id', params: { id: invoice.id } }">
               <VIcon icon="mdi-eye-outline" />
             </IconBtn>
 

@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-import InvoiceEditable from '@/views/apps/case/InvoiceEditable.vue'
+import type {VForm} from 'vuetify/components';
+import CaseAddActions from '@/views/case/add/CaseAddActions.vue';
+import CaseWritable from '@/views/case/add/CaseWritable.vue';
 
-// Type: Invoice data
-import type { CaseData } from '@/views/apps/case/types'
+// Type: Case data
+import type {CaseData} from '@/views/case/types';
 
 // 👉 Default Blank Data
 const invoiceData = ref<CaseData>({
@@ -23,131 +25,63 @@ const invoiceData = ref<CaseData>({
       companyEmail: '',
       contact: '',
       country: '',
-      name: '',
-    },
+      name: ''
+    }
   },
   paymentDetails: {
     totalDue: '$12,110.55',
     bankName: 'American Bank',
     country: 'United States',
     iban: 'ETD95476213874685',
-    swiftCode: 'BR91905',
+    swiftCode: 'BR91905'
   },
   purchasedProducts: [
     {
       title: '',
       cost: 0,
       hours: 0,
-      description: '',
-    },
+      description: ''
+    }
   ],
   note: '',
   paymentMethod: '',
   salesperson: '',
-  thanksNote: '',
-})
+  thanksNote: ''
+});
 
-const paymentTerms = ref(true)
-const clientNotes = ref(false)
-const paymentStub = ref(false)
-const selectedPaymentMethod = ref('Bank Account')
-const paymentMethods = ['Bank Account', 'PayPal', 'UPI Transfer']
+
+const form = ref<VForm>();
+
+
+const router = useRouter();
+
+const onSubmit = async () => {
+  const result = await form.value?.validate();
+  console.log(result);
+  if (result?.valid) router.back();
+  else {
+    const id = result?.errors[0].id as string;
+    const elme = document.getElementById(id);
+    console.log('focus', id, elme)
+    if (elme) elme.focus();
+  }
+};
+
+
 </script>
 
 <template>
-  <VRow>
-    <!-- 👉 InvoiceEditable -->
-    <VCol
-      cols="12"
-      md="9"
-    >
-      <InvoiceEditable :data="invoiceData" />
-    </VCol>
+  <VForm ref="form" lazy-validation>
+    <VRow>
+      <!-- 👉 CaseEditable -->
+      <VCol cols="12" md="9">
+        <CaseWritable :data="invoiceData"/>
+      </VCol>
 
-    <!-- 👉 Right Column: Invoice Action -->
-    <VCol
-      cols="12"
-      md="3"
-    >
-      <VCard class="mb-8">
-        <VCardText>
-          <!-- 👉 Send Invoice -->
-          <VBtn
-            block
-            prepend-icon="mdi-send-outline"
-            class="mb-3"
-          >
-            Send Invoice
-          </VBtn>
-
-          <!-- 👉 Preview -->
-          <VBtn
-            block
-            color="secondary"
-            variant="outlined"
-            class="mb-3"
-            :to="{ name: 'apps-invoice-preview-id', params: { id: '5036' } }"
-          >
-            Preview
-          </VBtn>
-
-          <!-- 👉 Save -->
-          <VBtn
-            block
-            color="secondary"
-            variant="outlined"
-          >
-            Save
-          </VBtn>
-        </VCardText>
-      </VCard>
-
-      <!-- 👉 Select payment method -->
-      <VSelect
-        v-model="selectedPaymentMethod"
-        :items="paymentMethods"
-        label="Accept Payment Via"
-        class="mb-6"
-      />
-
-      <!-- 👉 Payment Terms -->
-      <div class="d-flex align-center justify-space-between">
-        <VLabel for="payment-terms">
-          Payment Terms
-        </VLabel>
-        <div>
-          <VSwitch
-            id="payment-terms"
-            v-model="paymentTerms"
-          />
-        </div>
-      </div>
-
-      <!-- 👉  Client Notes -->
-      <div class="d-flex align-center justify-space-between">
-        <VLabel for="client-notes">
-          Client Notes
-        </VLabel>
-        <div>
-          <VSwitch
-            id="client-notes"
-            v-model="clientNotes"
-          />
-        </div>
-      </div>
-
-      <!-- 👉  Payment Stub -->
-      <div class="d-flex align-center justify-space-between">
-        <VLabel for="payment-stub">
-          Payment Stub
-        </VLabel>
-        <div>
-          <VSwitch
-            id="payment-stub"
-            v-model="paymentStub"
-          />
-        </div>
-      </div>
-    </VCol>
-  </VRow>
+      <!-- 👉 Right Column: Case Action -->
+      <VCol cols="12" md="3">
+        <CaseAddActions @submit="onSubmit"/>
+      </VCol>
+    </VRow>
+  </VForm>
 </template>

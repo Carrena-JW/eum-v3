@@ -49,7 +49,7 @@ const database: SearchItem[] = [
   },
   {
     id: 7,
-    url: { name: 'apps-invoice-preview-id', params: { id: '5036' } },
+    url: { name: 'case-preview-id', params: { id: '5036' } },
     icon: 'mdi-file-document-outline',
     title: 'Invoice Preview',
     category: 'appsPages',

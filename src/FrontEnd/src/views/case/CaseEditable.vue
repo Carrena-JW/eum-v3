@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import InvoiceProductEdit from './InvoiceProductEdit.vue'
+import InvoiceProductEdit from './CaseProductEdit.vue'
 import type { CaseData } from './types'
 import {useCaseStore  } from './useCaseStore'
 import type { Client } from '@/@fake-db/types'

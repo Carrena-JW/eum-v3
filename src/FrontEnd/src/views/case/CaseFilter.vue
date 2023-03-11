@@ -33,22 +33,25 @@ watchEffect(() => {
         <!-- 👉 Status filter -->
         <VCol
           cols="12"
-          md="4"
+          md="6"
         >
           <!-- 👉 Autocomplete -->
-          <VAutocomplete
+          <VCombobox
             v-model="selectedStatus"
-            :items="['접수', '대기', '진행중', '해결됨', '완료', '종료']"
             chips
+            clearable
             multiple
-            label="Select Status"
+            closable-chips
+            clear-icon="mdi-close-circle-outline"
+            :items="['접수', '대기', '진행중', '해결됨', '완료', '종료']"
+            label="상태 필터"
           />
         </VCol>
 
         <!-- 👉 DateRange filter -->
         <VCol
           cols="12"
-          md="8"
+          md="6"
         >
           <AppDateTimePicker
             v-model="dateRange"
