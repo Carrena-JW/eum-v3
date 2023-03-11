@@ -1,7 +1,10 @@
 <script setup lang="ts">
 import { VForm } from 'vuetify/components'
 import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant'
+import type { LoginResponse } from '@/@fake-db/types'
+import { useAppAbility } from '@/plugins/casl/useAppAbility'
 import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
+import axios from '@axios'
 import authV2LoginIllustrationBorderedDark from '@images/pages/auth-v2-login-illustration-bordered-dark.png'
 import authV2LoginIllustrationBorderedLight from '@images/pages/auth-v2-login-illustration-bordered-light.png'
 import authV2LoginIllustrationDark from '@images/pages/auth-v2-login-illustration-dark.png'
@@ -17,6 +20,11 @@ const isPasswordVisible = ref(false)
 const authV2LoginMask = useGenerateImageVariant(authV2LoginMaskLight, authV2LoginMaskDark)
 const authV2LoginIllustration = useGenerateImageVariant (authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
 
+const route = useRoute()
+const router = useRouter()
+
+const ability = useAppAbility()
+
 const errors = ref<Record<string, string | undefined>>({
   email: undefined,
   password: undefined,
@@ -26,6 +34,36 @@ const refVForm = ref<VForm>()
 const email = ref('admin@demo.com')
 const password = ref('admin')
 const rememberMe = ref(false)
+
+const login = () => {
+  axios.post<LoginResponse>('/auth/login', { email: email.value, password: password.value })
+    .then(r => {
+      const { accessToken, userData, userAbilities } = r.data
+
+      localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
+      ability.update(userAbilities)
+
+      localStorage.setItem('userData', JSON.stringify(userData))
+      localStorage.setItem('accessToken', JSON.stringify(accessToken))
+
+      // Redirect to `to` query if exist or redirect to index route
+      router.replace(route.query.to ? String(route.query.to) : '/')
+    })
+    .catch(e => {
+      const { errors: formErrors } = e.response.data
+
+      errors.value = formErrors
+      console.error(e.response.data)
+    })
+}
+
+const onSubmit = () => {
+  refVForm.value?.validate()
+    .then(({ valid: isValid }) => {
+      if (isValid)
+        login()
+    })
+}
 </script>
 
 <template>
@@ -95,7 +133,7 @@ const rememberMe = ref(false)
         <VCardText>
           <VForm
             ref="refVForm"
-            @submit.prevent="() => {}"
+            @submit.prevent="onSubmit"
           >
             <VRow>
               <!-- email -->
@@ -126,12 +164,12 @@ const rememberMe = ref(false)
                     v-model="rememberMe"
                     label="Remember me"
                   />
-                  <a
+                  <RouterLink
                     class="text-primary ms-2 mb-1"
-                    href="#"
+                    :to="{ name: 'forgot-password' }"
                   >
                     Forgot Password?
-                  </a>
+                  </RouterLink>
                 </div>
 
                 <VBtn
@@ -148,12 +186,12 @@ const rememberMe = ref(false)
                 class="text-base text-center"
               >
                 <span>New on our platform?</span>
-                <a
+                <RouterLink
                   class="text-primary ms-2"
-                  href="#"
+                  :to="{ name: 'register' }"
                 >
                   Create an account
-                </a>
+                </RouterLink>
               </VCol>
               <VCol
                 cols="12"

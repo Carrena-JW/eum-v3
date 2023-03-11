@@ -1,4 +1,5 @@
 import { fileURLToPath } from 'url'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -23,6 +24,11 @@ export default defineConfig({
     }),
     Pages({
       dirs: ['./src/pages'],
+
+      // ℹ️ We need three routes using single routes so we will ignore generating route for this SFC file
+      onRoutesGenerated: routes => [
+        ...routes,
+      ],
     }),
     Layouts({
       layoutsDirs: './src/layouts/',
@@ -32,10 +38,16 @@ export default defineConfig({
       dts: true,
     }),
     AutoImport({
-      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'pinia'],
+      imports: ['vue', 'vue-router', '@vueuse/core', '@vueuse/math', 'vue-i18n', 'pinia'],
       vueTemplate: true,
     }),
-
+    VueI18nPlugin({
+      runtimeOnly: true,
+      compositionOnly: true,
+      include: [
+        fileURLToPath(new URL('./src/plugins/i18n/locales/**', import.meta.url)),
+      ],
+    }),
     DefineOptions(),
   ],
   define: { 'process.env': {} },

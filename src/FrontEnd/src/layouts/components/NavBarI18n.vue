@@ -7,6 +7,10 @@ const { isAppRtl } = useThemeConfig()
 
 const i18nCompLanguages: I18nLanguage[] = [
   {
+    label: '한국어',
+    i18nLang: 'ko',
+  },
+  {
     label: 'English',
     i18nLang: 'en',
   },

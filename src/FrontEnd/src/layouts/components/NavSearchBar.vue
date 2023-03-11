@@ -24,61 +24,10 @@ const isAppSearchBarVisible = ref(false)
 
 // 👉 Default suggestions
 const suggestionGroups: SuggestionGroup[] = [
-  {
-    title: 'Popular Searches',
-    content: [
-      { icon: 'mdi-chart-donut', title: 'Analytics', url: { name: 'dashboards-analytics' } },
-      { icon: 'mdi-chart-bubble', title: 'CRM', url: { name: 'dashboards-crm' } },
-      { icon: 'mdi-file-outline', title: 'Invoice List', url: { name: 'apps-invoice-list' } },
-      { icon: 'mdi-account-group-outline', title: 'User List', url: { name: 'apps-user-list' } },
-    ],
-  },
-  {
-    title: 'Apps & Pages',
-    content: [
-      { icon: 'mdi-calendar', title: 'Calendar', url: { name: 'apps-calendar' } },
-      { icon: 'mdi-file-plus-outline', title: 'Invoice Add', url: { name: 'apps-invoice-add' } },
-      { icon: 'mdi-currency-usd', title: 'Pricing', url: { name: 'pages-pricing' } },
-      { icon: 'mdi-account-cog-outline', title: 'Account Settings', url: { name: 'pages-account-settings-tab', params: { tab: 'account' } } },
-    ],
-  },
-  {
-    title: 'User Interface',
-    content: [
-      { icon: 'mdi-alpha-a-box-outline', title: 'Typography', url: { name: 'pages-typography' } },
-      { icon: 'mdi-tab', title: 'Tabs', url: { name: 'components-tabs' } },
-      { icon: 'mdi-gesture-tap-button', title: 'Buttons', url: { name: 'components-button' } },
-      { icon: 'mdi-keyboard-settings-outline', title: 'Statistics', url: { name: 'pages-cards-card-statistics' } },
-    ],
-  },
-  {
-    title: 'Popular Searches',
-    content: [
-      { icon: 'mdi-format-list-checkbox', title: 'Select', url: { name: 'forms-select' } },
-      { icon: 'mdi-lastpass', title: 'Combobox', url: { name: 'forms-combobox' } },
-      { icon: 'mdi-calendar-range-outline', title: 'Date & Time Picker', url: { name: 'forms-date-time-picker' } },
-      { icon: 'mdi-hexagram-outline', title: 'Rating', url: { name: 'forms-rating' } },
-    ],
-  },
 ]
 
 // 👉 No Data suggestion
 const noDataSuggestions: Suggestion[] = [
-  {
-    title: 'Analytics Dashboard',
-    icon: 'mdi-cart-outline',
-    url: { name: 'dashboards-analytics' },
-  },
-  {
-    title: 'Account Settings',
-    icon: 'mdi-account-outline',
-    url: { name: 'pages-account-settings-tab', params: { tab: 'account' } },
-  },
-  {
-    title: 'Pricing Page',
-    icon: 'mdi-cash',
-    url: { name: 'pages-pricing' },
-  },
 ]
 
 const searchQuery = ref('')

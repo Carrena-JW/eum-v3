@@ -16,7 +16,7 @@ const shortcuts = [
     icon: 'mdi-account-outline',
     title: 'Users',
     subtitle: 'Manage Users',
-    to: { name: 'apps-user-list' },
+    to: { name: 'user-list' },
   },
   {
     icon: 'mdi-view-dashboard-outline',
