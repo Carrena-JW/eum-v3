@@ -55,6 +55,7 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@themeConfig': fileURLToPath(new URL('./themeConfig.ts', import.meta.url)),
+      '@api': fileURLToPath(new URL('./src/@api', import.meta.url)),
       '@core': fileURLToPath(new URL('./src/@core', import.meta.url)),
       '@layouts': fileURLToPath(new URL('./src/@layouts', import.meta.url)),
       '@images': fileURLToPath(new URL('./src/assets/images/', import.meta.url)),

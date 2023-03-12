@@ -26,6 +26,12 @@
       "@layouts": [
         "src/@layouts"
       ],
+      "@api/*": [
+        "src/@api/*"
+      ],
+      "@api": [
+        "src/@api"
+      ],
       "@core/*": [
         "src/@core/*"
       ],

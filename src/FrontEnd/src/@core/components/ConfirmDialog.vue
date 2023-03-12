@@ -1,31 +1,32 @@
 <script setup lang="ts">
 interface Props {
-  confirmationMsg: string
-  isDialogVisible: boolean
+  confirmationMsg: string;
+  isDialogVisible: boolean;
 }
 
 interface Emit {
-  (e: 'update:isDialogVisible', value: boolean): void
-  (e: 'confirm', value: boolean): void
+  (e: 'update:isDialogVisible', value: boolean): void;
+
+  (e: 'confirm', value: boolean): void;
 }
 
-const props = defineProps<Props>()
+const props = defineProps<Props>();
 
-const emit = defineEmits<Emit>()
+const emit = defineEmits<Emit>();
 
 const updateModelValue = (val: boolean) => {
-  emit('update:isDialogVisible', val)
-}
+  emit('update:isDialogVisible', val);
+};
 
 const onConfirmation = () => {
-  emit('confirm', true)
-  updateModelValue(false)
-}
+  emit('confirm', true);
+  updateModelValue(false);
+};
 
 const onCancel = () => {
-  emit('confirm', false)
-  emit('update:isDialogVisible', false)
-}
+  emit('confirm', false);
+  emit('update:isDialogVisible', false);
+};
 </script>
 
 <template>

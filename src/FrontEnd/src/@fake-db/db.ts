@@ -13,5 +13,8 @@ import './apps/email'
 import './apps/invoice'
 import './apps/case'
 
+// Admins
+import './admin/step'
+
 // forwards the matched request over network
 mock.onAny().passThrough()

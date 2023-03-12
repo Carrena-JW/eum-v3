@@ -1,4 +1,5 @@
-import casePages from './case'
-import type { VerticalNavItems } from '@/@layouts/types'
+import casePages from './case';
+import admin from './admin';
+import type {VerticalNavItems} from '@/@layouts/types';
 
-export default [...casePages] as VerticalNavItems
+export default [...casePages, ...admin] as VerticalNavItems;
