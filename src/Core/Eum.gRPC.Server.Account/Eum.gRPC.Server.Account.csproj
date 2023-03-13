@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="protobuf-net.Grpc.AspNetCore" Version="1.1.1" />
     <PackageReference Include="protobuf-net.Grpc.AspNetCore.Reflection" Version="1.1.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,11 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Endpoints\Case\" />
-    <Folder Include="Endpoints\Process\" />
-    <Folder Include="Modules\Process\Domains\" />
-    <Folder Include="Modules\Step\Domains\" />
-    <Folder Include="Modules\Step\Services\" />
+    <Folder Include="Modules\Auth\" />
+    <Folder Include="Modules\Token\Repositories\" />
+    <Folder Include="Modules\Token\Services\" />
   </ItemGroup>
 
 </Project>

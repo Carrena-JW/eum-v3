@@ -1,0 +1,30 @@
+﻿using Eum.Core.Service.Contracts.Auth.Data.Token;
+using Eum.Core.Shared.Repositories;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using ProtoBuf.Grpc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.ServiceModel;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Eum.Core.Service.Contracts.Account.Endpoints
+{
+    [ServiceContract]
+    public interface ITokenEndpoint : IEndpoint
+    {
+        [OperationContract]
+        Task<TokenReply> CreateAsync(TokenRequest request, CallContext context = default);
+    }
+
+    [Area("Account")]
+    [Route("[Area]/[controller]")]
+    [Authorize]
+    [ApiController]
+    public class TokenController : Controller
+    {
+    }
+}

@@ -1,4 +1,8 @@
-using Eum.ServiceClient.Contracts.Auth.Endpoints;
+using Eum.Core.Service;
+using Eum.Core.Module;
+using Eum.Core.Shared;
+using Eum.Core;
+using Eum.Core.Shared.Identity.JwtAuth;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,12 +12,17 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddGrpcClient<IAuthEndpoint>(o =>
- {
-     o.Address = new Uri("https://localhost:5001");
- });
+
+builder.Services.AddJwtAuth();
+builder.Services.AddAuthClient();
+builder.Services.AddServiceDeskClient();
+builder.Services.ConfigureRepositories();
+builder.Services.ConfigureServices();
+new SharedModule().ConfigureServices(builder.Services);
 
 var app = builder.Build();
+app.ConfigureEumCore();
+new SharedModule().ApplicationLoaded(app.Services);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -24,6 +33,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseMiddleware<AuthorizationHeaderMiddleware>();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

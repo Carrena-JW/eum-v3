@@ -1,5 +1,8 @@
+using Eum.Core.Service.Contracts.Auth;
+using Grpc.Net.Client;
 using Microsoft.AspNetCore.Mvc;
-
+using ProtoBuf.Grpc.Client;
+using System.Diagnostics;
 
 namespace Eum.Host.Web.Controllers
 {
@@ -20,8 +23,9 @@ namespace Eum.Host.Web.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public string Get()
+        public async Task<string> Get()
         {
+
             return String.Empty;
 
             

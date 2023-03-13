@@ -1,10 +1,9 @@
 using Eum.Core;
 using Eum.Core.Module;
 using Eum.Core.Shared;
-using Eum.Core.Shared.Identity.JwtAuth;
 using Eum.Extensions.Logging;
-using Eum.gRPC.Server.ServiceDesk.Endpoints.Step;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Eum.gRPC.Server.Account.Endpoints.Auth;
+using Eum.gRPC.Server.Account.Endpoints.Token;
 using ProtoBuf.Grpc.Server;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,35 +14,23 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddCodeFirstGrpc();
 builder.Services.AddCodeFirstGrpcReflection();
-builder.Services.AddAuthorization();
-builder.Services.AddJwtAuth();
 builder.Services.ConfigureRepositories();
 builder.Services.ConfigureServices();
 builder.Host.UseEumLogging();
-builder.WebHost.ConfigureKestrel(options =>
-{
-    // Setup a HTTP/2 endpoint without TLS.
-    options.ListenLocalhost(7074, o =>
-    {
-        o.Protocols = HttpProtocols.Http2;
-        o.UseHttps();
-    });
-});
+
 new SharedModule().ConfigureServices(builder.Services);
 
 var app = builder.Build();
 app.ConfigureEumCore();
+
 new SharedModule().ApplicationLoaded(app.Services);
 
 var logger = app.Services.GetService<ILogger<Program>>();
 logger!.LogInformation("Test!!");
 
-app.UseMiddleware<AuthorizationHeaderMiddleware>();
-app.UseAuthentication();
-app.UseAuthorization();
-
 // Configure the HTTP request pipeline.
-app.MapGrpcService<StepEndpoint>();
+app.MapGrpcService<AuthEndpoint>();
+app.MapGrpcService<TokenEndpoint>();
 app.MapCodeFirstGrpcReflectionService();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
