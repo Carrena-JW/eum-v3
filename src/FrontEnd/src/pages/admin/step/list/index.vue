@@ -54,6 +54,7 @@ const onConfirmDelete = async () => {
         <thead>
         <tr>
           <th scope="col">Id</th>
+          <th scope="col" class="text-center">System</th>
           <th scope="col" class="text-center">Name</th>
           <th scope="col" class="text-center">ACTIONS</th>
         </tr>
@@ -63,10 +64,19 @@ const onConfirmDelete = async () => {
         <tbody>
         <tr v-for="item in items" :key="item.id">
           <!-- 👉 Id -->
-          <td>
+          <td style="width: 200px;">
             <RouterLink :to="{ name: 'case-preview-id', params: { id: item.id } }">
               #{{ item.id }}
             </RouterLink>
+          </td>
+
+          <!-- 👉 IsSystem -->
+          <td class="text-center" style="width: 1rem;">
+            <VCheckbox
+              :id="`check${item.id}`"
+              disabled
+              :model-value="item.isSystem"
+            />
           </td>
 
           <!-- 👉 Status -->
