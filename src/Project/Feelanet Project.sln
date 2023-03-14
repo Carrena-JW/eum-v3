@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libs", "Libs", "{9BA210D7-A
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.Core.Service", "..\Core\Eum.Core.Service\Eum.Core.Service.csproj", "{36D76C27-374F-423F-AA18-0B5018D0E43E}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eum.Extensions.Logging", "..\Core\Eum.Extensions.Logging\Eum.Extensions.Logging.csproj", "{EED7CA04-5B10-41C4-9078-BABCC5FAC469}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{36D76C27-374F-423F-AA18-0B5018D0E43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36D76C27-374F-423F-AA18-0B5018D0E43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36D76C27-374F-423F-AA18-0B5018D0E43E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED7CA04-5B10-41C4-9078-BABCC5FAC469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED7CA04-5B10-41C4-9078-BABCC5FAC469}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED7CA04-5B10-41C4-9078-BABCC5FAC469}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED7CA04-5B10-41C4-9078-BABCC5FAC469}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,6 +55,7 @@ Global
 		{5A4CF98E-EF1F-47BB-8067-631873F2BEBB} = {9BA210D7-ADCB-4A9F-8CDF-28196B7028F6}
 		{4958FA69-B515-4E8C-BED3-E933F80E73B7} = {9BA210D7-ADCB-4A9F-8CDF-28196B7028F6}
 		{36D76C27-374F-423F-AA18-0B5018D0E43E} = {9BA210D7-ADCB-4A9F-8CDF-28196B7028F6}
+		{EED7CA04-5B10-41C4-9078-BABCC5FAC469} = {9BA210D7-ADCB-4A9F-8CDF-28196B7028F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {54AC22D0-D4AA-4954-B2F0-992D182E0602}

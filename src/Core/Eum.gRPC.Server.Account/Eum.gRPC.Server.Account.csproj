@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <Folder Include="Modules\Auth\" />
+    <Folder Include="Modules\Token\Exceptions\" />
     <Folder Include="Modules\Token\Repositories\" />
     <Folder Include="Modules\Token\Services\" />
   </ItemGroup>

@@ -16,6 +16,7 @@
     <ProjectReference Include="..\..\Core\Eum.Core.Model\Eum.Core.csproj" />
     <ProjectReference Include="..\..\Core\Eum.Core.Service\Eum.Core.Service.csproj" />
     <ProjectReference Include="..\..\Core\Eum.Core.Shared\Eum.Core.Shared.csproj" />
+    <ProjectReference Include="..\..\Core\Eum.Extensions.Logging\Eum.Extensions.Logging.csproj" />
   </ItemGroup>
 
 </Project>

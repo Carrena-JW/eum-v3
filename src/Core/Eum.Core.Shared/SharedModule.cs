@@ -1,4 +1,5 @@
 ﻿using Eum.Core.Module;
+using Eum.Core.Shared.Infra.Mvc.Filters;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,10 @@ namespace Eum.Core.Shared
         {
             services.ConfigureRepositories();
             services.ConfigureServices();
+            services.AddControllersWithViews(options =>
+            {
+                options.Filters.Add<GlobalApiResponseWrappingFilter>();
+            });
         }
 
         public void ApplicationLoaded(IServiceProvider serviceProvider)

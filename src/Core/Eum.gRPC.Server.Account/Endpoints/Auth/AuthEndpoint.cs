@@ -1,10 +1,10 @@
 ﻿using Eum.Core.Shared.Services;
-using Eum.gRPC.Server.Account.Modules.Token.Exceptions;
 using Eum.Core.Service.Contracts.Auth.Data.Token;
 using ProtoBuf.Grpc;
 using Microsoft.AspNetCore.Authorization;
 using Eum.Core.Service.Contracts.Account.Endpoints;
 using Eum.Core.Service.Contracts.Account.Data.Auth;
+using Eum.Core.Shared.Exceptions;
 
 namespace Eum.gRPC.Server.Account.Endpoints.Auth
 {
@@ -45,7 +45,7 @@ namespace Eum.gRPC.Server.Account.Endpoints.Auth
                     errors.Add("Password does not match");
                 }
             }
-            catch(UserNotFoundException ex)
+            catch(UserNotFoundException)
             {
                 errors.Add("User does not exist");
             }

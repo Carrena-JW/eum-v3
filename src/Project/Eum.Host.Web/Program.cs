@@ -3,8 +3,12 @@ using Eum.Core.Module;
 using Eum.Core.Shared;
 using Eum.Core;
 using Eum.Core.Shared.Infra.Identity.JwtAuth;
+using Eum.Core.Shared.Infra.Mvc.Filters;
+using Eum.Core.Shared.Infra.Mvc;
+using Eum.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.WebHost.UseUrls("http://0.0.0.0:5000");
 
 // Add services to the container.
 
@@ -18,6 +22,7 @@ builder.Services.AddAuthClient();
 builder.Services.AddServiceDeskClient();
 builder.Services.ConfigureRepositories();
 builder.Services.ConfigureServices();
+builder.Host.UseEumLogging();
 new SharedModule().ConfigureServices(builder.Services);
 
 var app = builder.Build();
@@ -31,7 +36,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseMiddleware<AuthorizationHeaderMiddleware>();
 app.UseAuthentication();

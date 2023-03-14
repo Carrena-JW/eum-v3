@@ -1,75 +1,62 @@
 <script setup lang="ts">
-import { VForm } from 'vuetify/components'
-import { useGenerateImageVariant } from '@/@core/composable/useGenerateImageVariant'
-import type { LoginResponse } from '@/@fake-db/types'
-import { useAppAbility } from '@/plugins/casl/useAppAbility'
-import AuthProvider from '@/views/pages/authentication/AuthProvider.vue'
-import axios from '@axios'
-import authV2LoginIllustrationBorderedDark from '@images/pages/auth-v2-login-illustration-bordered-dark.png'
-import authV2LoginIllustrationBorderedLight from '@images/pages/auth-v2-login-illustration-bordered-light.png'
-import authV2LoginIllustrationDark from '@images/pages/auth-v2-login-illustration-dark.png'
-import authV2LoginIllustrationLight from '@images/pages/auth-v2-login-illustration-light.png'
-import authV2LoginMaskDark from '@images/pages/auth-v2-login-mask-dark.png'
-import authV2LoginMaskLight from '@images/pages/auth-v2-login-mask-light.png'
-import { VNodeRenderer } from '@layouts/components/VNodeRenderer'
-import { themeConfig } from '@themeConfig'
-import { emailValidator, requiredValidator } from '@validators'
+import {VForm} from 'vuetify/components';
+import {useGenerateImageVariant} from '@/@core/composable/useGenerateImageVariant';
+import type {LoginResponse} from '@/@fake-db/types';
+import {useAppAbility} from '@/plugins/casl/useAppAbility';
+import AuthProvider from '@/views/pages/authentication/AuthProvider.vue';
+import authV2LoginIllustrationBorderedDark from '@images/pages/auth-v2-login-illustration-bordered-dark.png';
+import authV2LoginIllustrationBorderedLight from '@images/pages/auth-v2-login-illustration-bordered-light.png';
+import authV2LoginIllustrationDark from '@images/pages/auth-v2-login-illustration-dark.png';
+import authV2LoginIllustrationLight from '@images/pages/auth-v2-login-illustration-light.png';
+import authV2LoginMaskDark from '@images/pages/auth-v2-login-mask-dark.png';
+import authV2LoginMaskLight from '@images/pages/auth-v2-login-mask-light.png';
+import {VNodeRenderer} from '@layouts/components/VNodeRenderer';
+import {themeConfig} from '@themeConfig';
+import {emailValidator, requiredValidator} from '@validators';
+import api from '@api';
 
-const isPasswordVisible = ref(false)
+const isPasswordVisible = ref(false);
 
-const authV2LoginMask = useGenerateImageVariant(authV2LoginMaskLight, authV2LoginMaskDark)
-const authV2LoginIllustration = useGenerateImageVariant (authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true)
+const authV2LoginMask = useGenerateImageVariant(authV2LoginMaskLight, authV2LoginMaskDark);
+const authV2LoginIllustration = useGenerateImageVariant(authV2LoginIllustrationLight, authV2LoginIllustrationDark, authV2LoginIllustrationBorderedLight, authV2LoginIllustrationBorderedDark, true);
 
-const route = useRoute()
-const router = useRouter()
+const route = useRoute();
+const router = useRouter();
 
-const ability = useAppAbility()
+const ability = useAppAbility();
 
 const errors = ref<Record<string, string | undefined>>({
   email: undefined,
-  password: undefined,
-})
+  password: undefined
+});
 
-const refVForm = ref<VForm>()
-const email = ref('admin@demo.com')
-const password = ref('admin')
-const rememberMe = ref(false)
+const refVForm = ref<VForm>();
+const email = ref('admin@demo.com');
+const password = ref('admin');
+const rememberMe = ref(false);
 
-const login = () => {
-  axios.post<LoginResponse>('/auth/login', { email: email.value, password: password.value })
-    .then(r => {
-      const { accessToken, userData, userAbilities } = r.data
-
-      localStorage.setItem('userAbilities', JSON.stringify(userAbilities))
-      ability.update(userAbilities)
-
-      localStorage.setItem('userData', JSON.stringify(userData))
-      localStorage.setItem('accessToken', JSON.stringify(accessToken))
-
-      // Redirect to `to` query if exist or redirect to index route
-      router.replace(route.query.to ? String(route.query.to) : '/')
-    })
-    .catch(e => {
-      const { errors: formErrors } = e.response.data
-
-      errors.value = formErrors
-      console.error(e.response.data)
-    })
-}
+const login = async () => {
+  const result = await api.auth.login(email.value, password.value);
+  if (result.succeed) {
+    router.push('second-page');
+  } else {
+    errors.value.password = result.errors[0];
+  }
+};
 
 const onSubmit = () => {
   refVForm.value?.validate()
-    .then(({ valid: isValid }) => {
+    .then(({valid: isValid}) => {
       if (isValid)
-        login()
-    })
-}
+        login();
+    });
+};
 </script>
 
 <template>
   <div class="auth-logo d-flex align-center gap-x-2">
     <div>
-      <VNodeRenderer :nodes="themeConfig.app.logo" />
+      <VNodeRenderer :nodes="themeConfig.app.logo"/>
     </div>
 
     <h5 class="text-h5 font-weight-bold leading-normal text-capitalize">
@@ -197,9 +184,9 @@ const onSubmit = () => {
                 cols="12"
                 class="d-flex align-center"
               >
-                <VDivider />
+                <VDivider/>
                 <span class="mx-4">or</span>
-                <VDivider />
+                <VDivider/>
               </VCol>
 
               <!-- auth providers -->
@@ -207,7 +194,7 @@ const onSubmit = () => {
                 cols="12"
                 class="text-center"
               >
-                <AuthProvider />
+                <AuthProvider/>
               </VCol>
             </VRow>
           </VForm>
@@ -223,8 +210,8 @@ const onSubmit = () => {
 
 <route lang="yaml">
 meta:
-  layout: blank
-  action: read
-  subject: Auth
-  redirectIfLoggedIn: true
+layout: blank
+action: read
+subject: Auth
+redirectIfLoggedIn: true
 </route>
