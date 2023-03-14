@@ -4,7 +4,7 @@ using Eum.gRPC.Server.ServiceDesk.Modules.Setp.Repositories;
 using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 using ProtoBuf.Grpc;
-using Eum.Core.Shared.Identity.JwtAuth;
+using Eum.Core.Shared.Infra.Identity.JwtAuth;
 
 namespace Eum.gRPC.Server.ServiceDesk.Endpoints.Step
 {

@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Eum.Core.Shared.Identity.JwtAuth
+namespace Eum.Core.Shared.Infra.Identity.JwtAuth
 {
     public static class AuthorizationExtension
     {

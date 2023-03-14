@@ -8,7 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eum.Core.Shared.Identity.JwtAuth
+namespace Eum.Core.Shared.Infra.Identity.JwtAuth
 {
     public class AuthorizationHeaderMiddleware : IMiddleware
     {

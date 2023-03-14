@@ -7,7 +7,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eum.Core.Shared.Identity.JwtAuth
+namespace Eum.Core.Shared.Infra.Identity.JwtAuth
 {
     public static class ContextAccessorExtensions
     {

@@ -11,9 +11,9 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using Eum.Core.Shared.Identity.JwtAuth;
 using Eum.Core.Service.Contracts.Auth;
 using Eum.Core.Service.Contracts.Account.Data.Auth;
+using Eum.Core.Shared.Infra.Identity.JwtAuth;
 
 namespace Eum.Core.Service.Contracts.Account.Endpoints
 {

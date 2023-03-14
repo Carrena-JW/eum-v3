@@ -1,7 +1,7 @@
 using Eum.Core;
 using Eum.Core.Module;
 using Eum.Core.Shared;
-using Eum.Core.Shared.Identity.JwtAuth;
+using Eum.Core.Shared.Infra.Identity.JwtAuth;
 using Eum.Extensions.Logging;
 using Eum.gRPC.Server.ServiceDesk.Endpoints.Step;
 using Microsoft.AspNetCore.Server.Kestrel.Core;

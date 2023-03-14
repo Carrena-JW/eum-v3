@@ -2,7 +2,7 @@ using Eum.Core.Service;
 using Eum.Core.Module;
 using Eum.Core.Shared;
 using Eum.Core;
-using Eum.Core.Shared.Identity.JwtAuth;
+using Eum.Core.Shared.Infra.Identity.JwtAuth;
 
 var builder = WebApplication.CreateBuilder(args);
 
