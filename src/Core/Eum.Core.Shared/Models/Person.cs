@@ -1,5 +1,8 @@
-﻿namespace Eum.Core.Shared.Models
+﻿using System.Runtime.Serialization;
+
+namespace Eum.Core.Shared.Models
 {
+    [DataContract]
     public class Person
     {
         public string PersonCode { get; set; }

@@ -7,17 +7,20 @@ namespace Eum.Core.Service.Contracts.Auth
     {
         IAuthEndpoint Auth { get; }
         ITokenEndpoint Token { get; }
+        IUserEndpoint User { get; }
     }
 
     public class AccountClient : GrpcClientBase, IAccountClient
     {
         public IAuthEndpoint Auth { get; }
         public ITokenEndpoint Token { get; }
+        public IUserEndpoint User { get; }
 
         public AccountClient(IHttpContextAccessor httpContextAccessor)
         {
             var token = httpContextAccessor.HttpContext.Request.Headers.Authorization;
             Auth = CreateClient<IAuthEndpoint>(token);
+            User = CreateClient<IUserEndpoint>(token);
             Token = CreateClient<ITokenEndpoint>(token);
         }
 

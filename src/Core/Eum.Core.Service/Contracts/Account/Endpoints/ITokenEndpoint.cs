@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using ProtoBuf.Grpc;
+using ProtoBuf.Grpc.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,5 +27,12 @@ namespace Eum.Core.Service.Contracts.Account.Endpoints
     [ApiController]
     public class TokenController : Controller
     {
+        [HttpGet("Current")]
+        [Authorize]
+        public Task<string> GetToken()
+        {
+            var token = HttpContext.Request.Headers.Authorization.FirstOrDefault()?.Replace("Bearer ", "");
+            return Task.FromResult(token);
+        }
     }
 }

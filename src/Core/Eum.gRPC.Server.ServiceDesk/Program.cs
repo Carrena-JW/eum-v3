@@ -35,9 +35,6 @@ var app = builder.Build();
 app.ConfigureEumCore();
 new SharedModule().ApplicationLoaded(app.Services);
 
-var logger = app.Services.GetService<ILogger<Program>>();
-logger!.LogInformation("Test!!");
-
 app.UseMiddleware<AuthorizationHeaderMiddleware>();
 app.UseAuthentication();
 app.UseAuthorization();

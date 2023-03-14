@@ -29,13 +29,13 @@ WHERE Email = @Email";
             return ExecuteQuery<Person>(query, new { Email = email });
         }
 
-        public virtual IEnumerable<Person> GetUserInfoByPersonCode(string personId)
+        public virtual IEnumerable<Person> GetUserInfoByPersonCode(string personCode)
         {
             var query = $@"
 SELECT * FROM [dbo].[V_PERSON]
-WHERE PersonId = @PersonId";
+WHERE PersonCode = @PersonCode";
 
-            return base.ExecuteQuery<Person>(query, new { PersonId = personId });
+            return base.ExecuteQuery<Person>(query, new { PersonCode = personCode });
         }
     }
 }

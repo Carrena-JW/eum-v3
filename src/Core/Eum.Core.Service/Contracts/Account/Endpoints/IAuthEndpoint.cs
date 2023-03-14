@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using ProtoBuf.Grpc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +13,9 @@ using System.Threading.Tasks;
 using Eum.Core.Service.Contracts.Auth;
 using Eum.Core.Service.Contracts.Account.Data.Auth;
 using Eum.Core.Shared.Infra.Identity.JwtAuth;
+using Eum.Core.Service.Contracts.Account.Data.User;
+using ProtoBuf.Grpc;
+using ProtoBuf.Grpc.Configuration;
 
 namespace Eum.Core.Service.Contracts.Account.Endpoints
 {
@@ -30,13 +32,13 @@ namespace Eum.Core.Service.Contracts.Account.Endpoints
     [ApiController]
     public class AuthController : Controller
     {
-        private IAccountClient _authClient;
+        private IAccountClient _accountClient;
         private IAppConfigRepository _appConfigRepository;
         private IConfiguration _configuration;
 
-        public AuthController(IAccountClient authClient, IAppConfigRepository appConfigRepository, IConfiguration configuration)
+        public AuthController(IAccountClient accountClient, IAppConfigRepository appConfigRepository, IConfiguration configuration)
         {
-            _authClient = authClient;
+            _accountClient = accountClient;
             _appConfigRepository = appConfigRepository;
             _configuration = configuration;
         }
@@ -45,17 +47,12 @@ namespace Eum.Core.Service.Contracts.Account.Endpoints
         [AllowAnonymous]
         public async Task<SignInReply> SignIn(SignInRequest request)
         {
-            var result = await _authClient.Auth.SignInAsync(request);
-            if (result.Success)
+            var result = await _accountClient.Auth.SignInAsync(request);
+            if (result.Succeed)
+            {
                 Response.SetCookie(result.Token);
+            }
             return result;
-        }
-
-        [HttpGet("[action]")]
-        [Authorize]
-        public Task<string> GetUserName()
-        {
-            return Task.FromResult(HttpContext.User.GetPersonCode());
         }
     }
 }

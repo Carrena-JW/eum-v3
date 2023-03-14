@@ -3,6 +3,7 @@ using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProtoBuf.Grpc;
+using ProtoBuf.Grpc.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,15 +17,15 @@ namespace Eum.Core.Service.Contracts.ServiceDesk.Endpoints
     public interface IStepEndpoint : IEndpoint
     {
         [OperationContract]
-        Task<GetStepListReply> GetStepListAsync(GetStepListRequest request, ServerCallContext context = default);
+        Task<GetStepListReply> GetStepListAsync(GetStepListRequest request, CallContext context = default);
 
 
         [OperationContract]
-        Task<SetStepReply> SetStepAsync(SetStepRequest request, ServerCallContext context = default);
+        Task<SetStepReply> SetStepAsync(SetStepRequest request, CallContext context = default);
 
 
         [OperationContract]
-        Task<DelStepReply> DelStepAsync(DelStepRequest request, ServerCallContext context = default);
+        Task<DelStepReply> DelStepAsync(DelStepRequest request, CallContext context = default);
     }
 
     /// <summary>

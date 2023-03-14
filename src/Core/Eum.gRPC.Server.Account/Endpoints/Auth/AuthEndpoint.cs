@@ -1,10 +1,9 @@
 ﻿using Eum.Core.Shared.Services;
-using Eum.Core.Service.Contracts.Auth.Data.Token;
-using ProtoBuf.Grpc;
-using Microsoft.AspNetCore.Authorization;
-using Eum.Core.Service.Contracts.Account.Endpoints;
 using Eum.Core.Service.Contracts.Account.Data.Auth;
+using Eum.Core.Service.Contracts.Account.Endpoints;
 using Eum.Core.Shared.Exceptions;
+using Microsoft.AspNetCore.Authorization;
+using ProtoBuf.Grpc;
 
 namespace Eum.gRPC.Server.Account.Endpoints.Auth
 {
@@ -51,7 +50,7 @@ namespace Eum.gRPC.Server.Account.Endpoints.Auth
             }
 
             reply.Errors = errors;
-            reply.Success = errors.Count() == 0;
+            reply.Succeed = errors.Count() == 0;
             return reply;
         }
     }
