@@ -1,4 +1,4 @@
-import axios from '@axios';
+import api from './http-client';
 
 export interface StepParams {
 
@@ -11,12 +11,15 @@ export interface StepData {
 
 export default {
   get(params: StepParams): Promise<StepData[]> {
-    return axios.get('/admin/step', {params}).then(res => res.data);
+    return api.get({
+      url: '/ServiceDesk/step',
+      params
+    });
   },
   delete(id: string): Promise<boolean> {
-    return axios.delete('/admin/step', {params: {id: id}});
+    return api.delete({url: '/ServiceDesk/step', params: {id: id}});
   },
   save(item: StepData): Promise<StepData> {
-    return axios.post('/admin/step', item);
+    return api.post({url: '/ServiceDesk/step', data: item});
   }
 };

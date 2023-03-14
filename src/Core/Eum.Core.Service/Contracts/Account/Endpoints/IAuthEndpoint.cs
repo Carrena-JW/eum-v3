@@ -46,7 +46,8 @@ namespace Eum.Core.Service.Contracts.Account.Endpoints
         public async Task<SignInReply> SignIn(SignInRequest request)
         {
             var result = await _authClient.Auth.SignInAsync(request);
-            Response.SetCookie(result.Token);
+            if (result.Success)
+                Response.SetCookie(result.Token);
             return result;
         }
 
