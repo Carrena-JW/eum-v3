@@ -19,7 +19,6 @@ using ProtoBuf.Grpc.Configuration;
 
 namespace Eum.Core.Service.Contracts.Account.Endpoints
 {
-
     [ServiceContract]
     public interface IAuthEndpoint : IEndpoint
     {
