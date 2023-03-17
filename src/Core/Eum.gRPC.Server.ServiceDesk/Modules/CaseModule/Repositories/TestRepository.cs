@@ -1,7 +1,7 @@
 ﻿using Eum.Core.Data;
 using Eum.Core.Service.Contracts.ServiceDesk.Data.Case;
 
-namespace Eum.gRPC.Server.ServiceDesk.Modules.Case.Repositories
+namespace Eum.gRPC.Server.ServiceDesk.Modules.CaseModule.Repositories
 {
     public interface ITestRepository : IRepository
     {
@@ -16,7 +16,7 @@ namespace Eum.gRPC.Server.ServiceDesk.Modules.Case.Repositories
 
         public IEnumerable<CaseInfo> GetCases()
         {
-            return base.ExecuteQuery<CaseInfo>(
+            return ExecuteQuery<CaseInfo>(
                 "SELECT * FROM [T_CASE]");
         }
     }

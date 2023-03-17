@@ -1,7 +1,7 @@
 ﻿using Eum.Core.Data;
 using Eum.Core.Service.Contracts.ServiceDesk.Data.Case;
 
-namespace Eum.gRPC.Server.ServiceDesk.Modules.Process.Repositories
+namespace Eum.gRPC.Server.ServiceDesk.Modules.ProcessModule.Repositories
 {
     public interface IStepElementRepository : IRepository
     {

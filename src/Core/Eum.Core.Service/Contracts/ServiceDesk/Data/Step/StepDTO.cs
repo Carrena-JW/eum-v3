@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Eum.Core.Service.Contracts.ServiceDesk.Data.Step
 {
     [DataContract]
-    public class Step
+    public class StepDTO
     {
         [DataMember(Order = 1)]
         public Guid? Id { get; set; }

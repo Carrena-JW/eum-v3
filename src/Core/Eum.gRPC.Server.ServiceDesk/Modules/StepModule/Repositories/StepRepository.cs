@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Xml.Linq;
 using System;
 
-namespace Eum.gRPC.Server.ServiceDesk.Modules.Setp.Repositories
+namespace Eum.gRPC.Server.ServiceDesk.Modules.StepModule.Repositories
 {
     public interface IStepRepository : IRepository
     {
-        IEnumerable<Step> Get();
-        Step? Get(Guid id);
-        Step? Set(Step item);
+        IEnumerable<StepDTO> Get();
+        StepDTO? Get(Guid id);
+        StepDTO? Set(StepDTO item);
         bool Del(Guid id);
     }
 
@@ -20,20 +20,20 @@ namespace Eum.gRPC.Server.ServiceDesk.Modules.Setp.Repositories
         {
         }
 
-        public IEnumerable<Step> Get()
+        public IEnumerable<StepDTO> Get()
         {
             var @query = "SELECT * FROM [T_STEP]";
-            var results = ExecuteQuery<Step>(query);
+            var results = ExecuteQuery<StepDTO>(query);
             return results;
         }
 
-        public Step? Get(Guid id)
+        public StepDTO? Get(Guid id)
         {
             var @query = "SELECT * FROM [T_STEP] WHERE Id = @Id";
-            return ExecuteQuery<Step>(query, new { Id = id }).FirstOrDefault();
+            return ExecuteQuery<StepDTO>(query, new { Id = id }).FirstOrDefault();
         }
 
-        public Step? Set(Step item)
+        public StepDTO? Set(StepDTO item)
         {
             if (item.Id != null && Get(item.Id.Value) == null)
             {
@@ -45,7 +45,7 @@ UPDATE [dbo].[T_STEP]
       ,[CreatedDate] = GETUTCDATE()
    OUTPUT INSERTED.*
  WHERE Id = @Id";
-                return ExecuteQuery<Step>(query, new
+                return ExecuteQuery<StepDTO>(query, new
                 {
                     item.Id,
                     item.Name,
@@ -67,7 +67,7 @@ INSERT INTO[dbo].[T_STEP]
            ,@Description
            ,@CreatedId
            ,GETUTCDATE())";
-                return ExecuteQuery<Step>(query, new
+                return ExecuteQuery<StepDTO>(query, new
                 {
                     item.Name,
                     item.Description,

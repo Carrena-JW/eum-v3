@@ -6,6 +6,6 @@ namespace Eum.Core.Service.Contracts.ServiceDesk.Data.Step.Params
     public class GetStepListReply
     {
         [DataMember(Order = 1)]
-        public IEnumerable<Step> Items { get; set; }
+        public IEnumerable<StepDTO> Items { get; set; }
     }
 }

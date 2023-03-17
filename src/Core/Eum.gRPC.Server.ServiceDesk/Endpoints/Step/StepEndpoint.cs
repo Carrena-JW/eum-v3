@@ -1,9 +1,9 @@
 ﻿using Eum.Core.Service.Contracts.ServiceDesk.Data.Step.Params;
 using Eum.Core.Service.Contracts.ServiceDesk.Endpoints;
-using Eum.gRPC.Server.ServiceDesk.Modules.Setp.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using ProtoBuf.Grpc;
 using Eum.Core.Shared.Infra.Identity.JwtAuth;
+using Eum.gRPC.Server.ServiceDesk.Modules.StepModule.Repositories;
 
 namespace Eum.gRPC.Server.ServiceDesk.Endpoints.Step
 {

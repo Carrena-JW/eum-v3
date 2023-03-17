@@ -1,10 +1,10 @@
 ﻿using Eum.Core.Data;
-using Eum.gRPC.Server.ServiceDesk.Modules.Case.Repositories;
 using Eum.Core.Service.Contracts.ServiceDesk.Data.Case;
+using Eum.gRPC.Server.ServiceDesk.Modules.CaseModule.Repositories;
 
-namespace Eum.gRPC.Server.ServiceDesk.Modules.Case.Services
+namespace Eum.gRPC.Server.ServiceDesk.Modules.CaseModule.Services
 {
-    public interface ITestService : IService 
+    public interface ITestService : IService
     {
         IEnumerable<CaseInfo> GetTestData();
     }
@@ -12,7 +12,7 @@ namespace Eum.gRPC.Server.ServiceDesk.Modules.Case.Services
     {
         private ITestRepository _testRepository;
 
-        public TestService(ITestRepository testRepository) 
+        public TestService(ITestRepository testRepository)
         {
             _testRepository = testRepository;
         }
