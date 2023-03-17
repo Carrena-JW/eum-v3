@@ -44,7 +44,7 @@ namespace Eum.gRPC.Server.ServiceDesk.Modules.ClientModule.Repositories
             var user = !item.Id.HasValue ? GetByEmail(item.Email) : null;
             if (user != null) throw new DuplicateWaitObjectException(user.Email);
 
-            if (item.Id.HasValue && Get(item.Id.Value) == null)
+            if (item.Id.HasValue && Get(item.Id.Value) != null)
             {
                 var @query = @"
 UPDATE [dbo].[T_CLIENT]
