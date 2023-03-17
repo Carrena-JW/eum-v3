@@ -1,51 +1,49 @@
 ﻿using Eum.Core.Data;
-using System.Collections.Generic;
-using System.Xml.Linq;
-using System;
-using Eum.Core.Service.Contracts.ServiceDesk.StepModule.Data;
+using Eum.gRPC.Server.ServiceDesk.Modules.ClientModule.Domains;
+using Eum.gRPC.Server.ServiceDesk.Modules.CompanyModule.Domains;
 
-namespace Eum.gRPC.Server.ServiceDesk.Modules.StepModule.Repositories
+namespace Eum.gRPC.Server.ServiceDesk.Modules.CompanyModule.Repositories
 {
-    public interface IStepRepository : IRepository
+    public interface ICompanyRepository : IRepository
     {
-        IEnumerable<StepDTO> Get();
-        StepDTO? Get(Guid id);
-        StepDTO? Set(StepDTO item);
+        IEnumerable<Company> Get();
+        Company? Get(Guid id);
+        Company? Set(Company item);
         bool Del(Guid id);
     }
 
-    public class StepRepository : DatabaseRepositoryBase, IStepRepository
+    public class CompanyRepository : DatabaseRepositoryBase, ICompanyRepository
     {
-        public StepRepository(IConfiguration configuration) : base("EumServiceDesk", configuration)
+        public CompanyRepository(IConfiguration configuration) : base("EumServiceDesk", configuration)
         {
         }
 
-        public IEnumerable<StepDTO> Get()
+        public IEnumerable<Company> Get()
         {
-            var @query = "SELECT * FROM [T_STEP]";
-            var results = ExecuteQuery<StepDTO>(query);
+            var @query = "SELECT * FROM [T_COMPANY]";
+            var results = ExecuteQuery<Company>(query);
             return results;
         }
 
-        public StepDTO? Get(Guid id)
+        public Company? Get(Guid id)
         {
-            var @query = "SELECT * FROM [T_STEP] WHERE Id = @Id";
-            return ExecuteQuery<StepDTO>(query, new { Id = id }).FirstOrDefault();
+            var @query = "SELECT * FROM [T_COMPANY] WHERE Id = @Id";
+            return ExecuteQuery<Company>(query, new { Id = id }).FirstOrDefault();
         }
 
-        public StepDTO? Set(StepDTO item)
+        public Company? Set(Company item)
         {
             if (item.Id != null && Get(item.Id.Value) == null)
             {
                 var @query = @"
-UPDATE [dbo].[T_STEP]
+UPDATE [dbo].[T_COMPANY]
    SET [Name] = @Name
       ,[Description] = @Description
       ,[CreatedId] = @CreatedId
       ,[CreatedDate] = GETUTCDATE()
    OUTPUT INSERTED.*
  WHERE Id = @Id";
-                return ExecuteQuery<StepDTO>(query, new
+                return ExecuteQuery<Company>(query, new
                 {
                     item.Id,
                     item.Name,
@@ -56,7 +54,7 @@ UPDATE [dbo].[T_STEP]
             else
             {
                 var @query = @"
-INSERT INTO[dbo].[T_STEP]
+INSERT INTO[dbo].[T_COMPANY]
            ([Name]
            ,[Description]
            ,[CreatedId]
@@ -67,7 +65,7 @@ INSERT INTO[dbo].[T_STEP]
            ,@Description
            ,@CreatedId
            ,GETUTCDATE())";
-                return ExecuteQuery<StepDTO>(query, new
+                return ExecuteQuery<Company>(query, new
                 {
                     item.Name,
                     item.Description,
@@ -78,7 +76,7 @@ INSERT INTO[dbo].[T_STEP]
 
         public bool Del(Guid id)
         {
-            var @query = "DELETE [T_STEP] WHERE Id = @Id";
+            var @query = "DELETE [T_COMPANY] WHERE Id = @Id";
             return Convert.ToBoolean(ExecuteNonQuery(query, new { Id = id }));
         }
     }

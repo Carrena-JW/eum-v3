@@ -3,9 +3,9 @@ using Eum.Core.Module;
 using Eum.Core.Shared;
 using Eum.Core.Shared.Infra.Identity.JwtAuth;
 using Eum.Extensions.Logging;
-using Eum.gRPC.Server.Account.Endpoints.Auth;
-using Eum.gRPC.Server.Account.Endpoints.Token;
-using Eum.gRPC.Server.Account.Endpoints.User;
+using Eum.gRPC.Server.Account.Modules.AuthModule;
+using Eum.gRPC.Server.Account.Modules.TokenModule;
+using Eum.gRPC.Server.Account.Modules.UserModule;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using ProtoBuf.Grpc.Server;
 

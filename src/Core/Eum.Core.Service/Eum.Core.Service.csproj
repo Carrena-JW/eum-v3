@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\ServiceDesk\Data\Process\" />
+    <Folder Include="Contracts\ServiceDesk\ProcessModule\" />
   </ItemGroup>
 
   <ItemGroup>

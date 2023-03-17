@@ -1,4 +1,6 @@
-﻿using Eum.Core.Service.Contracts.Account.Endpoints;
+﻿using Eum.Core.Service.Contracts.Account.AuthModule;
+using Eum.Core.Service.Contracts.Account.TokenModule;
+using Eum.Core.Service.Contracts.Account.UserModule;
 using Microsoft.AspNetCore.Http;
 
 namespace Eum.Core.Service.Contracts.Auth

@@ -1,5 +1,5 @@
 ﻿using Eum.Core.Data;
-using Eum.Core.Service.Contracts.ServiceDesk.Data.Case;
+using Eum.Core.Service.Contracts.ServiceDesk.CaseModule;
 using Eum.gRPC.Server.ServiceDesk.Modules.CaseModule.Repositories;
 
 namespace Eum.gRPC.Server.ServiceDesk.Modules.CaseModule.Services

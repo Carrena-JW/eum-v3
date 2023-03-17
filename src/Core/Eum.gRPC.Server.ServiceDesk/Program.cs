@@ -4,8 +4,10 @@ using Eum.Core.Shared;
 using Eum.Core.Shared.Infra.Identity.JwtAuth;
 using Eum.Extensions.Logging;
 using Eum.gRPC.Server.ServiceDesk;
-using Eum.gRPC.Server.ServiceDesk.Endpoints.ProductModule;
-using Eum.gRPC.Server.ServiceDesk.Endpoints.Step;
+using Eum.gRPC.Server.ServiceDesk.Modules.ClientModule;
+using Eum.gRPC.Server.ServiceDesk.Modules.CompanyModule;
+using Eum.gRPC.Server.ServiceDesk.Modules.ProductModule;
+using Eum.gRPC.Server.ServiceDesk.Modules.StepModule;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection;
 using ProtoBuf.Grpc.Server;
@@ -13,6 +15,9 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// To configure your ASP.NET Core application to run as a Windows service,
+// install the Microsoft.Extensions.Hosting.WindowsServices package from NuGet. Then add a call to UseWindowsService 
+builder.Host.UseWindowsService();
 // Additional configuration is required to successfully run gRPC on macOS.
 // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
 
@@ -52,8 +57,9 @@ app.UseAuthorization();
 // Configure the HTTP request pipeline.
 app.MapGrpcService<StepEndpoint>();
 app.MapGrpcService<ProductEndpoint>();
+app.MapGrpcService<CompanyEndpoint>();
+app.MapGrpcService<ClientEndpoint>();
 app.MapCodeFirstGrpcReflectionService();
 app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
-
 
 app.Run();

@@ -20,10 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Modules\Auth\" />
-    <Folder Include="Modules\Token\Exceptions\" />
-    <Folder Include="Modules\Token\Repositories\" />
-    <Folder Include="Modules\Token\Services\" />
+    <Folder Include="Modules\TokenModule\Exceptions\" />
+    <Folder Include="Modules\TokenModule\Repositories\" />
+    <Folder Include="Modules\TokenModule\Services\" />
   </ItemGroup>
 
 </Project>
