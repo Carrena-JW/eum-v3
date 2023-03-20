@@ -1,5 +1,6 @@
 using Eum.Core;
 using Eum.Core.Module;
+using Eum.Core.Service.Utilities;
 using Eum.Core.Shared;
 using Eum.Core.Shared.Infra.Identity.JwtAuth;
 using Eum.Extensions.Logging;
@@ -14,6 +15,7 @@ using ProtoBuf.Grpc.Server;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+//builder.ConfigureKestrelWithRandomPort();
 
 // To configure your ASP.NET Core application to run as a Windows service,
 // install the Microsoft.Extensions.Hosting.WindowsServices package from NuGet. Then add a call to UseWindowsService 
@@ -30,20 +32,6 @@ builder.Services.ConfigureRepositories();
 builder.Services.ConfigureServices();
 builder.Services.AddMapper();
 builder.Host.UseEumLogging();
-builder.WebHost.ConfigureKestrel(options =>
-{
-    // Setup a HTTP/2 endpoint without TLS.
-    options.ListenLocalhost(5074, o =>
-    {
-        o.Protocols = HttpProtocols.Http2;
-    });
-    // Setup a HTTP/2 endpoint without TLS.
-    options.ListenLocalhost(7074, o =>
-    {
-        o.Protocols = HttpProtocols.Http2;
-        o.UseHttps();
-    });
-});
 new SharedModule().ConfigureServices(builder.Services);
 
 var app = builder.Build();
@@ -60,6 +48,6 @@ app.MapGrpcService<ProductEndpoint>();
 app.MapGrpcService<CompanyEndpoint>();
 app.MapGrpcService<ClientEndpoint>();
 app.MapCodeFirstGrpcReflectionService();
-app.MapGet("/", () => "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
+app.MapGet("/", () => $"HTTP: {portHttp}, HTTP: {portHttps}. Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
 app.Run();

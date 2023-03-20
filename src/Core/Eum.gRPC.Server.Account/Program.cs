@@ -1,5 +1,6 @@
 using Eum.Core;
 using Eum.Core.Module;
+using Eum.Core.Service.Utilities;
 using Eum.Core.Shared;
 using Eum.Core.Shared.Infra.Identity.JwtAuth;
 using Eum.Extensions.Logging;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Server.Kestrel.Core;
 using ProtoBuf.Grpc.Server;
 
 var builder = WebApplication.CreateBuilder(args);
+//builder.ConfigureKestrelWithRandomPort();
 
 // Additional configuration is required to successfully run gRPC on macOS.
 // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
@@ -22,19 +24,6 @@ builder.Services.AddJwtAuth();
 builder.Services.ConfigureRepositories();
 builder.Services.ConfigureServices();
 builder.Host.UseEumLogging();
-builder.WebHost.ConfigureKestrel(options =>
-{
-    // Setup a HTTP/2 endpoint without TLS.
-    options.ListenLocalhost(5073, o =>
-    {
-        o.Protocols = HttpProtocols.Http2;
-    });
-    options.ListenLocalhost(7073, o =>
-    {
-        o.Protocols = HttpProtocols.Http2;
-        o.UseHttps();
-    });
-});
 new SharedModule().ConfigureServices(builder.Services);
 
 var app = builder.Build();
