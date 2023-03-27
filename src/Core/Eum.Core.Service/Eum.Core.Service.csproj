@@ -14,10 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\ServiceDesk\ProcessModule\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Eum.Core.Model\Eum.Core.csproj" />
     <ProjectReference Include="..\Eum.Core.Shared\Eum.Core.Shared.csproj" />
   </ItemGroup>

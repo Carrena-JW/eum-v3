@@ -5,12 +5,10 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule.Data
+namespace Eum.Core.Service.Contracts.ServiceDesk.ContractModule.Data
 {
     [DataContract]
-    public class SetStepRequest
+    public class GetContractListRequest
     {
-        [DataMember(Order = 1)]
-        public StepDTO Item { get; set; }
     }
 }

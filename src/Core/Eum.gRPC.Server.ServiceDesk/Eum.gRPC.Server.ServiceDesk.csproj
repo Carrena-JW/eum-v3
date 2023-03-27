@@ -23,9 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Modules\ProcessModule\Domains\" />
-    <Folder Include="Modules\StepModule\Domains\" />
-    <Folder Include="Modules\StepModule\Services\" />
+    <Folder Include="Modules\ContractModule\Domains\" />
+    <Folder Include="Modules\ContractModule\Services\" />
+    <Folder Include="Shared\Repositories\" />
   </ItemGroup>
 
 </Project>

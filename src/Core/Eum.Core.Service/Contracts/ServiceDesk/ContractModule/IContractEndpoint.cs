@@ -1,4 +1,4 @@
-﻿using Eum.Core.Service.Contracts.ServiceDesk.StepModule.Data;
+﻿using Eum.Core.Service.Contracts.ServiceDesk.ContractModule.Data;
 using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -11,21 +11,21 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule
+namespace Eum.Core.Service.Contracts.ServiceDesk.ContractModule
 {
     [ServiceContract]
-    public interface IStepEndpoint : IEndpoint
+    public interface IContractEndpoint : IEndpoint
     {
         [OperationContract]
-        Task<GetStepListReply> GetStepListAsync(GetStepListRequest request, CallContext context = default);
+        Task<GetContractListReply> GetContractListAsync(GetContractListRequest request, CallContext context = default);
 
 
         [OperationContract]
-        Task<SetStepReply> SetStepAsync(SetStepRequest request, CallContext context = default);
+        Task<SetContractReply> SetContractAsync(SetContractRequest request, CallContext context = default);
 
 
         [OperationContract]
-        Task<DelStepReply> DelStepAsync(DelStepRequest request, CallContext context = default);
+        Task<DelContractReply> DelContractAsync(DelContractRequest request, CallContext context = default);
     }
 
     /// <summary>
@@ -35,7 +35,7 @@ namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule
     [Route("[Area]/[controller]")]
     [Authorize]
     [ApiController]
-    public class StepController : Controller
+    public class ContractController : Controller
     {
         private IServiceDeskClient _serviceDeskClient;
 
@@ -43,7 +43,7 @@ namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule
         /// 생성자 주석
         /// </summary>
         /// <param name="serviceDeskClient"></param>
-        public StepController(IServiceDeskClient serviceDeskClient)
+        public ContractController(IServiceDeskClient serviceDeskClient)
         {
             _serviceDeskClient = serviceDeskClient;
         }
@@ -53,9 +53,9 @@ namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<GetStepListReply> GetStepList()
+        public async Task<GetContractListReply> GetContractList()
         {
-            var results = await _serviceDeskClient.Step.GetStepListAsync(new GetStepListRequest());
+            var results = await _serviceDeskClient.Contract.GetContractListAsync(new GetContractListRequest());
             return results;
         }
 
@@ -65,9 +65,9 @@ namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<SetStepReply> SetStepList(SetStepRequest request)
+        public async Task<SetContractReply> SetContractList(SetContractRequest request)
         {
-            var results = await _serviceDeskClient.Step.SetStepAsync(request);
+            var results = await _serviceDeskClient.Contract.SetContractAsync(request);
             return results;
         }
 
@@ -77,9 +77,9 @@ namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete]
-        public async Task<DelStepReply> DelStepList(Guid id)
+        public async Task<DelContractReply> DelContractList(Guid id)
         {
-            var results = await _serviceDeskClient.Step.DelStepAsync(new DelStepRequest { Id = id });
+            var results = await _serviceDeskClient.Contract.DelContractAsync(new DelContractRequest { Id = id });
             return results;
         }
     }

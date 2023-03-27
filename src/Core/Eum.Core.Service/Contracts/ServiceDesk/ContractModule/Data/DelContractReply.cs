@@ -1,9 +1,9 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Eum.Core.Service.Contracts.ServiceDesk.StepModule.Data
+namespace Eum.Core.Service.Contracts.ServiceDesk.ContractModule.Data
 {
     [DataContract]
-    public class DelStepReply
+    public class DelContractReply
     {
         [DataMember(Order = 1)]
         public bool Succeed { get; set; }

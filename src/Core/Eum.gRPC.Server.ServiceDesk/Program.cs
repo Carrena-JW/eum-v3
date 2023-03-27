@@ -7,8 +7,8 @@ using Eum.Extensions.Logging;
 using Eum.gRPC.Server.ServiceDesk;
 using Eum.gRPC.Server.ServiceDesk.Modules.ClientModule;
 using Eum.gRPC.Server.ServiceDesk.Modules.CompanyModule;
+using Eum.gRPC.Server.ServiceDesk.Modules.ContractModule;
 using Eum.gRPC.Server.ServiceDesk.Modules.ProductModule;
-using Eum.gRPC.Server.ServiceDesk.Modules.StepModule;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.DependencyInjection;
 using ProtoBuf.Grpc.Server;
@@ -43,11 +43,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 // Configure the HTTP request pipeline.
-app.MapGrpcService<StepEndpoint>();
-app.MapGrpcService<ProductEndpoint>();
-app.MapGrpcService<CompanyEndpoint>();
+//app.MapGrpcService<CaseEndpoint>();
 app.MapGrpcService<ClientEndpoint>();
+app.MapGrpcService<CompanyEndpoint>();
+app.MapGrpcService<ContractEndpoint>();
+app.MapGrpcService<ProductEndpoint>();
 app.MapCodeFirstGrpcReflectionService();
-app.MapGet("/", () => $"HTTP: {portHttp}, HTTP: {portHttps}. Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
+app.MapGet("/", () => $"Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");
 
 app.Run();

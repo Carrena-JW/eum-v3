@@ -2,50 +2,50 @@
 using System.Collections.Generic;
 using System.Xml.Linq;
 using System;
-using Eum.Core.Service.Contracts.ServiceDesk.StepModule.Data;
+using Eum.Core.Service.Contracts.ServiceDesk.ContractModule.Data;
 
-namespace Eum.gRPC.Server.ServiceDesk.Modules.StepModule.Repositories
+namespace Eum.gRPC.Server.ServiceDesk.Modules.ContractModule.Repositories
 {
-    public interface IStepRepository : IRepository
+    public interface IContractRepository : IRepository
     {
-        IEnumerable<StepDTO> Get();
-        StepDTO? Get(Guid id);
-        StepDTO? Set(StepDTO item);
+        IEnumerable<ContractDTO> Get();
+        ContractDTO? Get(Guid id);
+        ContractDTO? Set(ContractDTO item);
         bool Del(Guid id);
     }
 
-    public class StepRepository : DatabaseRepositoryBase, IStepRepository
+    public class ContractRepository : DatabaseRepositoryBase, IContractRepository
     {
-        public StepRepository(IConfiguration configuration) : base("EumServiceDesk", configuration)
+        public ContractRepository(IConfiguration configuration) : base("EumServiceDesk", configuration)
         {
         }
 
-        public IEnumerable<StepDTO> Get()
+        public IEnumerable<ContractDTO> Get()
         {
-            var @query = "SELECT * FROM [T_STEP]";
-            var results = ExecuteQuery<StepDTO>(query);
+            var @query = "SELECT * FROM [T_CONTRACT]";
+            var results = ExecuteQuery<ContractDTO>(query);
             return results;
         }
 
-        public StepDTO? Get(Guid id)
+        public ContractDTO? Get(Guid id)
         {
-            var @query = "SELECT * FROM [T_STEP] WHERE Id = @Id";
-            return ExecuteQuery<StepDTO>(query, new { Id = id }).FirstOrDefault();
+            var @query = "SELECT * FROM [T_CONTRACT] WHERE Id = @Id";
+            return ExecuteQuery<ContractDTO>(query, new { Id = id }).FirstOrDefault();
         }
 
-        public StepDTO? Set(StepDTO item)
+        public ContractDTO? Set(ContractDTO item)
         {
             if (item.Id != null && Get(item.Id.Value) == null)
             {
                 var @query = @"
-UPDATE [dbo].[T_STEP]
+UPDATE [dbo].[T_CONTRACT]
    SET [Name] = @Name
       ,[Description] = @Description
       ,[CreatedId] = @CreatedId
       ,[CreatedDate] = GETUTCDATE()
    OUTPUT INSERTED.*
  WHERE Id = @Id";
-                return ExecuteQuery<StepDTO>(query, new
+                return ExecuteQuery<ContractDTO>(query, new
                 {
                     item.Id,
                     item.Name,
@@ -56,7 +56,7 @@ UPDATE [dbo].[T_STEP]
             else
             {
                 var @query = @"
-INSERT INTO[dbo].[T_STEP]
+INSERT INTO[dbo].[T_CONTRACT]
            ([Name]
            ,[Description]
            ,[CreatedId]
@@ -67,7 +67,7 @@ INSERT INTO[dbo].[T_STEP]
            ,@Description
            ,@CreatedId
            ,GETUTCDATE())";
-                return ExecuteQuery<StepDTO>(query, new
+                return ExecuteQuery<ContractDTO>(query, new
                 {
                     item.Name,
                     item.Description,
@@ -78,7 +78,7 @@ INSERT INTO[dbo].[T_STEP]
 
         public bool Del(Guid id)
         {
-            var @query = "DELETE [T_STEP] WHERE Id = @Id";
+            var @query = "DELETE [T_CONTRACT] WHERE Id = @Id";
             return Convert.ToBoolean(ExecuteNonQuery(query, new { Id = id }));
         }
     }

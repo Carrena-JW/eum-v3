@@ -9,6 +9,7 @@ using Eum.Core.Service.Contracts.ServiceDesk.ClientModule;
 using Eum.Core.Service.Contracts.ServiceDesk.ClientModule.Data;
 using Eum.Core.Service.Contracts.ServiceDesk.CompanyModule.Data;
 using Eum.gRPC.Server.ServiceDesk.Modules.CompanyModule.Domains;
+using Eum.gRPC.Server.ServiceDesk.Shared.Domains;
 
 namespace Eum.gRPC.Server.ServiceDesk.Modules.ClientModule
 {

@@ -1,5 +1,6 @@
 ﻿using Eum.Core.Data;
 using Eum.gRPC.Server.ServiceDesk.Modules.ClientModule.Domains;
+using Eum.gRPC.Server.ServiceDesk.Shared.Domains;
 
 namespace Eum.gRPC.Server.ServiceDesk.Modules.ClientModule.Repositories
 {
